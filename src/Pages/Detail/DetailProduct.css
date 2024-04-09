@@ -11,10 +11,13 @@
     line-height: 18px;
 }
 
+.fisrtChildrenProduct h1 {
+    margin-bottom: 5px;
+}
+
 .aboutproduct {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     margin-bottom: 50px;
 }
 .containerImgsProduct {
@@ -68,10 +71,133 @@
 
     .flex {
         width: 100%;
-        display: flex;
+        display: flex;  
     }
 }
 
+@media screen and (max-width:1396px) {
+    .aboutproduct {
+        width: 100%;
+        display: flex;
+        margin-bottom: 50px;
+    }
+    .container {
+        width: 90%;
+    }
+
+    .flex {
+        width: 59%;
+        display: flex;
+    }
+
+    .infomationProduct {
+        margin-left: 25px;
+    }
+
+    .container nav, svg {
+        font-size: 18px;
+    }
+
+    .fisrtChildrenProduct h1 {
+        font-size: 20px;
+    }
+
+    .fisrtChildrenProduct p {
+        font-size: 16px;
+    }
+
+    div .ant-tabs-tab-btn{
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 16px!important;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .aboutproduct {
+        width: 100%;
+        display: flex;
+        margin-bottom: 50px;
+    }
+
+    .flex {
+        width: 100%;
+    }
+    .fisrtChildrenProduct h1 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .aboutproduct {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .infomationProduct {
+        margin-left: 0 ;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .fisrtChildrenProduct {
+        width: 50%;
+    }
+
+    .secondChildrenProduct {
+        width: 50%;
+    }
+
+    .imgProduct {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .flex {
+        display: block;
+    }
+
+    .containerImgsProduct {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .container nav {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:430px){
+    .infomationProduct {
+        display: block;
+    }
+
+    .fisrtChildrenProduct {
+        width: 100%;
+    }
+
+    .secondChildrenProduct {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:375px){
+    .imgsproduct{
+    width: 45%;
+    height: auto;
+    }
+}
 .secondChildrenProduct span {
     display: block;
 } 
@@ -89,8 +215,7 @@ h3 {
 
 .imgProductDetail {
     margin: 0 auto;
-    width: 500px;
-    padding: 15px;
+    max-width: 500px;
     box-shadow: 0 0 20px #f3f3f3;
     text-align: center;
     margin-bottom: 1.5em;

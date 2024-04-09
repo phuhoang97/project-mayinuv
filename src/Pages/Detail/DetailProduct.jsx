@@ -65,7 +65,9 @@ function DetailProduct() {
           </div>
           <div className='infomationProduct'>
             <div className='fisrtChildrenProduct'>
-              <h1>Máy In UV Phẳng YF-2512K</h1>
+              <strong>
+                <h1>Máy In UV Phẳng YF-2512K</h1>
+              </strong>
               <p>
                 Vùng in 2500 mm x 1200mm <br />
                 Độ dày phương tiện tối đa.100 mm
@@ -94,11 +96,11 @@ function DetailProduct() {
               <span>
                 Category: <a href='#'> Máy In UV Phẳng</a>
               </span>
-              <span>
-                Tags:
+              <span className='tags'>
+                Tags:{" "}
                 <a href='#'>
-                  Máy in uv fortune YF-2512G, máy in uv giá rẻ, <br /> máy in uv
-                  nhập khẩu, máy in uv phẳng
+                  Máy in uv fortune YF-2512G, máy in uv giá rẻ, máy in uv nhập
+                  khẩu, máy in uv phẳng
                 </a>
               </span>
             </div>
@@ -178,7 +180,7 @@ function DetailProduct() {
             <TabPane tab='Thông tin bổ sung' key='2'>
               <div>
                 <h2>
-                  Specification:
+                  Specification:{" "}
                   <span className='nameProductDetail'>
                     Máy In UV Phẳng YF-2512K
                   </span>
