@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.service-component {
+  border-top: 2px solid lightgray;
+  margin-top: 30px;
+  margin: 50px;
+}
+
+.title-brick {
+  display: flex;
+  align-items: center;
+}
+
+.brick-red {
+  width: 16px;
+  height: 50px;
+  background: rgb(219, 68, 68);
+  margin: 30px 10px 30px 0;
+  border-radius: 5px;
+}
+
+.content-brick strong {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: rgb(219, 68, 68);
+  border-bottom: 3px solid rgb(219, 68, 68);
+}
+
+.company-goals {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.service-content {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.service-left {
+  width: 30%;
+}
+
+.service-left img {
+  width: 100%;
+}
+
+.service-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.icon-service {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(188, 188, 188);
+  border-radius: 10px;
+}
+
+.content-service-left {
+  width: 120px;
+}
+
+.content-service-right {
+  width: 80%;
+  padding: 20px;
+}
+
+.target-service {
+  display: flex;
+  flex-basis: calc(50% - 20px);
+  justify-content: center;
+  align-items: center;
+}

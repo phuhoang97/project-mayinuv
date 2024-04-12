@@ -1,0 +1,103 @@
+.best-selling {
+  border-top: 2px solid lightgray;
+  margin-top: 30px;
+  margin: 50px;
+}
+
+.title-component {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-all {
+  width: 130px;
+  height: 50px;
+  background-color: #db4444;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+}
+.view-all:hover,
+.view-all:active {
+  background-color: #e55555;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.multi-carousel {
+  margin-top: 80px;
+  text-align: center;
+  position: relative;
+}
+
+.card-product {
+  width: 300px;
+  border: none;
+  border-radius: 10px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto; /* Căn giữa phần tử */
+  background-color: #f5f5f5;
+  padding: 15px;
+  justify-content: center;
+}
+
+.product-img {
+  width: 300px;
+  height: 250px;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #f8f8f8;
+}
+
+.icon-view {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  font-size: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: transform 1s ease; /* Thêm hiệu ứng transition */
+  transform: translateY(100%);
+}
+
+.name-product {
+  padding-top: 50px;
+  font-size: 18px;
+}
+
+.card-product:hover .icon-view {
+  display: flex; /* Hiển thị khi hover vào card-product */
+  animation: slideUp 0.5s ease forwards; /* Sử dụng animation slideUp */
+}
+
+.slick-dots {
+  bottom: -40px !important;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

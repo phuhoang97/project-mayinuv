@@ -1,0 +1,65 @@
+.banner {
+  display: flex;
+  margin-top: 30px;
+}
+
+.banner-left {
+  width: 25%;
+  border-right: 2px solid lightgray;
+}
+
+.ingredient {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.text-ingredient {
+  width: 80%;
+  margin-left: 30px;
+  font-size: 18px;
+}
+
+.ingredient:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.banner-right {
+  width: 75%; /* Đặt chiều rộng của phần bên phải */
+  position: relative; /* Thiết lập vị trí tương đối để có thể định vị ảnh tương đối với phần bên phải */
+}
+
+.carousel-inner {
+  height: 550px;
+  text-align: center;
+}
+
+.carousel-item img {
+  height: 100%; /* Ảnh trong carousel chiếm toàn bộ chiều cao của carousel */
+  width: 95%; /* Ảnh trong carousel chiếm toàn bộ chiều rộng của carousel */
+  object-fit: cover; /* Đảm bảo ảnh không bị vỡ hoặc bị kéo dài ra ngoài */
+  z-index: 1;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 300px;
+  background-color: #bdbdbd; /* Màu nền cho submenu */
+  border: 1px solid #ccc; /* Viền cho submenu */
+  z-index: 999999;
+}
+
+.submenu li {
+  padding: 20px;
+}
+.submenu li:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.ingredient:hover .submenu {
+  display: block; /* Hiển thị submenu khi hover vào phần tử cha */
+  z-index: 999999;
+}

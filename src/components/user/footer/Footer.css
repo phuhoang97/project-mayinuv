@@ -1,0 +1,72 @@
+.footer {
+  background-color: rgb(44, 44, 44);
+  padding: 30px 0;
+}
+
+.footer-container {
+  margin: auto;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+ul {
+  list-style: none;
+}
+
+.name-company h3 {
+  color: white;
+  margin: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.footer-col h5 {
+  color: white;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h5::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: rgb(219, 68, 68);
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 17px;
+  /* text-transform: capitalize; */
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  padding-left: 5px;
+  color: rgb(209, 209, 209);
+}
+
+.social-links a {
+  padding: 5px;
+}
+
+.icon-footer {
+  padding-right: 10px;
+}
