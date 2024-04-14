@@ -1,0 +1,53 @@
+.other-documents {
+  border-top: 2px solid lightgray;
+  margin: 80px 50px 50px 50px;
+}
+
+.documents {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.document-left {
+  width: 50%;
+  background-color: lightblue;
+  height: 520px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.document-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 20px;
+}
+
+.document-right-bottom {
+  display: flex;
+  gap: 20px;
+}
+
+.document-right-top {
+  background-color: lightcoral;
+  height: 250px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.document-rbl {
+  background-color: lightcyan;
+  height: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.document-rbr {
+  background-color: lightgray;
+  height: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 50%;
+}
