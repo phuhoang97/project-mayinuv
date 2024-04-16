@@ -75,7 +75,7 @@ function PrinterRepair() {
               <div class='all-menu alert alert-info d-none d-lg-block'>
                 <h3>Mục lục bài viết</h3>
                 <div class='list-menu-t list-group'>
-                  <div className='pb-10'>
+                  <div className=''>
                     <a href='#quy-trinh' class='color-change list-group-item '>
                       Quy trình tiếp nhận sửa máy in UV gồm :
                     </a>
@@ -104,13 +104,10 @@ function PrinterRepair() {
                       </a>
                     </div>
                   </div>
-                  <a
-                    href='#mot-so-loi'
-                    class='pb-10 color-change list-group-item '
-                  >
+                  <a href='#mot-so-loi' class=' color-change list-group-item '>
                     Một số lỗi thường gặp nhất cần dịch vụ sửa máy in UV
                   </a>
-                  <div className='pb-10'>
+                  <div className=''>
                     <a
                       href='#mot-so-nguyen'
                       class='color-change list-group-item '
@@ -142,10 +139,7 @@ function PrinterRepair() {
                       </a>
                     </div>
                   </div>
-                  <a
-                    href='#diem-manh'
-                    class='pb-10 color-change list-group-item '
-                  >
+                  <a href='#diem-manh' class=' color-change list-group-item '>
                     Điểm mạnh dịch vụ sửa chữa máy in UV của chúng tôi
                   </a>
                   <a href='#lien-he' class='color-change list-group-item '>
@@ -175,7 +169,7 @@ function PrinterRepair() {
                   </div>
 
                   <div class='list-menu-t list-group'>
-                    <a href='#' class='pb-10 list-group-item '>
+                    <a href='#' class=' list-group-item '>
                       Quy trình tiếp nhận sửa máy in UV gồm :
                       <div class='list-menu-th list-group'>
                         <a href='#' class='list-group-item '>
@@ -193,10 +187,10 @@ function PrinterRepair() {
                         </a>
                       </div>
                     </a>
-                    <a href='#' class='pb-10 list-group-item '>
+                    <a href='#' class=' list-group-item '>
                       Một số lỗi thường gặp nhất cần dịch vụ sửa máy in UV
                     </a>
-                    <a href='#' class='pb-10 list-group-item '>
+                    <a href='#' class=' list-group-item '>
                       Một số nguyên nhân thường dẫn đến hỏng hóc máy in UV khổ
                       lớn
                       <div class='list-menu-th list-group'>
@@ -217,7 +211,7 @@ function PrinterRepair() {
                         </a>
                       </div>
                     </a>
-                    <a href='#' class='pb-10 list-group-item '>
+                    <a href='#' class=' list-group-item '>
                       Điểm mạnh dịch vụ sửa chữa máy in UV của chúng tôi
                     </a>
                     <a href='#' class='list-group-item '>

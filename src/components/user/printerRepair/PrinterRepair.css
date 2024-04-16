@@ -84,9 +84,8 @@
 }
 
 .menu-left .all-menu {
-    background-color: rgba(219, 68, 68, 1);
+    background-color: rgb(251 116 116);
     color: black;
-    font-weight: 500;
     margin-bottom: 0;
 }
 
@@ -114,12 +113,20 @@ a:active {
     font-weight: 500;
 }
 
+.list-menu-th {
+    border-radius: 0!important;
+}
+
 .list-menu-t a:hover {
     background: transparent;
 }
 
 .list-menu-t .pb-10 {
     padding-bottom: 10px;
+}
+
+.list-menu-t {
+     border-radius: 0!important;
 }
 
 .respon-t {
@@ -152,6 +159,13 @@ a:active {
     margin-bottom: 20px;
 }
 
+.Refer-prices:hover {
+    background-image: linear-gradient(to left,#b20a2c ,#fffbd57e );
+    background-position: left;
+    background-size: 200% 100%; 
+    background-position: right; 
+    transition: background-position 1.6s; 
+}
 .menu-right .all-step-t .more-shop{
     border-top: 1px solid #dc3545;
 }
@@ -195,3 +209,18 @@ a:active {
 
 
 }
+
+a.color-change {
+   padding: 0 5px;
+   margin: 5px 0px;
+}
+
+a.color-change:hover {
+    background-image: linear-gradient(to left,#b20a2c ,#fffbd57e );
+    color: rgb(41, 37, 37);
+    background-position: left;
+    background-size: 200% 100%; 
+    background-position: right; 
+    transition: background-position 1.6s; 
+}
+
