@@ -4,50 +4,102 @@
 }
 
 .documents {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: minmax(250px, auto);
+  grid-gap: 20px;
+  margin: 50px;
 }
 
-.document-left {
-  width: 50%;
-  background-color: lightblue;
+.doc-1 {
+  grid-row: 1/3;
+}
+
+.doc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.doc {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.doc:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.doc-compo {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.doc-right {
+  height: 250px;
+  overflow: hidden;
+}
+
+.doc-left {
   height: 520px;
+  overflow: hidden;
+}
+
+.doc-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+
+.doc-title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
   padding: 20px;
-  border-radius: 15px;
+  box-sizing: border-box;
 }
 
-.document-right {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  gap: 20px;
+.doc-title h4,
+.doc-title p,
+.doc-title button {
+  color: white;
+  margin: 0;
+  position: relative;
+  z-index: 3;
 }
 
-.document-right-bottom {
-  display: flex;
-  gap: 20px;
+.doc-title h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  margin-bottom: 10px;
 }
 
-.document-right-top {
-  background-color: lightcoral;
-  height: 250px;
-  border-radius: 15px;
-  padding: 20px;
+.doc-title p {
+  font-size: 20px;
 }
 
-.document-rbl {
-  background-color: lightcyan;
-  height: 250px;
-  padding: 20px;
-  border-radius: 15px;
-  width: 50%;
+.doc-title button {
+  width: 100px;
+  height: 40px;
+  background-color: #e33131;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
 }
 
-.document-rbr {
-  background-color: lightgray;
-  height: 250px;
-  padding: 20px;
-  border-radius: 15px;
-  width: 50%;
+.btn-documents:hover {
+  background-color: #df4a4a;
 }
