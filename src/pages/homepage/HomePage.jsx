@@ -73,9 +73,9 @@ function HomePage() {
         <Selling key={index} dataPrint={element} index={index} />
       ))}
 
-      <Guarantee />
-
       <OtherDocuments />
+
+      <Guarantee />
 
       <Footer />
 

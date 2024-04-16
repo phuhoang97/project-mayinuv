@@ -6,18 +6,17 @@ import { EyeOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Tooltip } from "antd";
 
 function ProductCard({ dataProduct }) {
-  console.log(dataProduct);
   return (
     <div className='product-card'>
       <div className='logo-card'>
         <img src={logoCard} alt='photo' />
 
         <div className='group-icon'>
-          <Tooltip title='Thêm giỏ hàng' placement='right'>
+          <Tooltip title='Thêm Giỏ Hàng' placement='right'>
             <ShoppingCartOutlined className='icon icon-shopping' />
           </Tooltip>
 
-          <Tooltip title='Xem chi tiết' placement='right'>
+          <Tooltip title='Xem Chi Tiết' placement='right'>
             <EyeOutlined className='icon icon-eye' />
           </Tooltip>
         </div>

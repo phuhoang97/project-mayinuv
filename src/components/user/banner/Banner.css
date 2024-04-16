@@ -41,14 +41,45 @@
   z-index: 1;
 }
 
-.submenu {
+.banner-left li {
+  padding: 5px;
+}
+
+:where(.css-dev-only-do-not-override-1kuana8).ant-menu-inline > .ant-menu-item,
+:where(.css-dev-only-do-not-override-1kuana8).ant-menu-vertical
+  > .ant-menu-item,
+:where(.css-dev-only-do-not-override-1kuana8).ant-menu-inline
+  > .ant-menu-submenu
+  > .ant-menu-submenu-title,
+:where(.css-dev-only-do-not-override-1kuana8).ant-menu-vertical
+  > .ant-menu-submenu
+  > .ant-menu-submenu-title {
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 60px;
+}
+
+/* :where(.css-dev-only-do-not-override-1kuana8).ant-menu .ant-menu-title-content {
+  height: 50px;
+  line-height: 50px;
+  padding: 20px;
+} */
+
+.ant-menu-title-content {
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* .submenu {
   display: none;
   position: absolute;
   top: 15%;
   left: 25%;
   width: 300px;
-  background-color: #bdbdbd; /* Màu nền cho submenu */
-  border: 1px solid #ccc; /* Viền cho submenu */
+  background-color: #bdbdbd;
+  border: 1px solid #ccc;
   z-index: 999999;
 }
 
@@ -57,9 +88,9 @@
 }
 .submenu li:hover {
   background-color: rgb(242, 242, 242);
-}
+} */
 
-.ingredient:hover .submenu {
-  display: block; /* Hiển thị submenu khi hover vào phần tử cha */
+/* .ingredient:hover .submenu {
+  display: block;
   z-index: 999999;
-}
+} */
