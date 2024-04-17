@@ -6,7 +6,7 @@ import Selling from "../../components/user/selling/Selling";
 import Guarantee from "../../components/user/guarantee/Guarantee";
 import Footer from "../../components/user/footer/Footer";
 import OtherDocuments from "../../components/user/otherDocuments/OtherDocuments";
-import ProductCard from "../../components/user/productCard/ProductCard";
+import ScrollToTopButton from "../../components/user/scrolltotopbutton/ScrollToTopButton";
 
 function HomePage() {
   const [data, setData] = useState([
@@ -76,6 +76,7 @@ function HomePage() {
       <OtherDocuments />
 
       <Guarantee />
+      <ScrollToTopButton />
 
       <Footer />
 
