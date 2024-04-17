@@ -232,3 +232,11 @@ div.infomation-mechine-children {
         display: block;
     }
 }
+
+/* 404/NotFound */
+
+.NotFound {
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
