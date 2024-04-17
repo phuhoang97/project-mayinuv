@@ -1,9 +1,22 @@
 import logo from "./logo.svg";
 import "./App.css";
-import DetailProduct from "./Pages/Detail/DetailProduct";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/homepage/HomePage.jsx";
+import DetailProduct from "./components/user/DetailProduct/DetailProduct";
+import PrinterRepair from "./components/user/printerRepair/PrinterRepair";
+import NotFound from "./components/user/404/NotFound";
+import AboutUs from "./components/user/aboutUs/AboutUs";
 
 function App() {
-  return <DetailProduct />;
+  return (
+    // <Routes>
+    //   <Route path='/' element={<HomePage />}></Route>
+    // </Routes>
+    <DetailProduct />
+    // <PrinterRepair />
+    // <NotFound />
+    // <AboutUs />
+  );
 }
 
 export default App;

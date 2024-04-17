@@ -1,0 +1,226 @@
+
+.t-container .img-back .background-image {
+    position: relative;
+  background-image: url('../../../assets/images/dich-vu-sua-may-in-uv-uy-tin.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  max-width: 100%;
+  min-height: 500px;
+}
+
+.breadcrumbs-repair .breadcrumb a, li.breadcrumb-item+.breadcrumb-item::before {
+    text-decoration: none;
+    color: white ;
+    text-shadow: 0 1px 1px #000;
+}
+
+.footer-backimg .mb-25 .link-repair a {
+    font-style: normal !important;
+    background-color: #111;
+    padding: 3px 6px !important;
+    color: #fff;
+    font-size: 11px !important;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 12px !important;
+}
+
+.text-footer-back .icon-view-back span{
+    color: #fff;
+    text-shadow: 0 1px 1px #000;
+    margin-left: 10px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.text-footer-back h1 {
+    color: #fff;
+    text-shadow: 0 1px 1px #000;
+}
+
+.top-bottom-back {
+    padding: 10px;
+}
+
+.top-bottom-back .footer-backimg {
+    bottom: 15px;
+    position: absolute;
+    z-index: 2;
+}
+
+.background-image .mask-backimg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, .6) 100%);
+}
+
+.t-container .about-status {
+    margin-top: 20px;
+}
+
+.menu-service {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-service .menu-right {
+    width: 67%;
+}
+
+.menu-service .menu-left {
+    width: 30%;
+    position: sticky;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.menu-left .all-menu {
+    background-color: rgb(251 116 116);
+    color: black;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+a:active {
+    background-color: transparent !important;
+}
+
+.list-menu-t a {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: black;
+    font-weight: 500;
+}
+
+.list-menu-th a {
+    background: transparent;
+    border: none;
+    padding: 10px 0px 0 10px;
+    color: black;
+    font-weight: 500;
+}
+
+.list-menu-th {
+    border-radius: 0!important;
+}
+
+.list-menu-t a:hover {
+    background: transparent;
+}
+
+.list-menu-t .pb-10 {
+    padding-bottom: 10px;
+}
+
+.list-menu-t {
+     border-radius: 0!important;
+}
+
+.respon-t {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.offcanvas-lg .all-menu {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.menu-left .button-respon {
+    background: black;
+    border: none;
+    color: #dc3545;
+}
+
+.menu-right .all-step-t {
+    padding: 16px;
+    background-color: #EFF2E9;
+}
+
+.Refer-prices {
+    background-color: #f34b5c;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.Refer-prices:hover {
+    background-image: linear-gradient(to left,#b20a2c ,#fffbd57e );
+    background-position: left;
+    background-size: 200% 100%; 
+    background-position: right; 
+    transition: background-position 1.6s; 
+}
+.menu-right .all-step-t .more-shop{
+    border-top: 1px solid #dc3545;
+}
+
+@media screen and (max-width: 990px) {
+    .menu-service {
+        display: block;
+    }
+
+    .menu-service .menu-right {
+        width: 100%;
+    }
+
+   
+}
+
+@media screen and (max-width:820px){
+    .t-container .img-back .background-image {
+        min-height: 400px;
+    }
+
+    .text-footer-back h1 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width:430px){
+    .t-container .img-back .background-image {
+        min-height: 255px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .text-footer-back h1 {
+        font-size: 18px;
+    }
+
+    .t-container .img-back .background-image {
+        min-height: 210px;
+    }
+
+
+}
+
+a.color-change {
+   padding: 0 5px;
+   margin: 5px 0px;
+}
+
+a.color-change:hover {
+    background-image: linear-gradient(to left,#b20a2c ,#fffbd57e );
+    color: rgb(41, 37, 37);
+    background-position: left;
+    background-size: 200% 100%; 
+    background-position: right; 
+    transition: background-position 1.6s; 
+}
+

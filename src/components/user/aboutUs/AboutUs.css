@@ -1,0 +1,130 @@
+.Color-Red-t {
+    color: #dc3545;
+}
+
+.history-company p {
+    margin-bottom: 0;
+}
+
+.AbouUs-first .AboutUsFirst-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.AboutUsFirst-container .history-company {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.AboutUsFirst-container .img-people {
+    width: 40%;
+}
+
+.AbouUs-first .AboutUsFirst-children {
+    display: flex;
+    justify-content: space-between;
+}
+
+.AboutUsFirst-children .img-BigColor {
+    width: 60%;
+}
+
+.AboutUsFirst-children .Accordion-right {
+    width: 37%;
+}
+
+.AboutUsFirst-children {
+    margin-top: 50px;
+}
+
+.Accordion-right .accordion-button {
+    color: #ffffff;
+    background: #786464;
+}
+
+.Accordion-right .accordion-item:first-of-type>.accordion-header .accordion-button,.accordion-button:not(.collapsed) {
+    color: #ffffff !important;
+    background: #786464 !important;
+}
+
+.Accordion-right .accordion {
+    --bs-accordion-btn-focus-box-shadow:none !important;
+}
+
+.Accordion-right .accordion-collapse  {
+    background-color: #bea8a8;
+    color: #471e22;
+    font-weight: 700;
+}
+
+.AboutUs-second {
+    margin: 30px 0;
+    border-top: 1px solid #dc3545;
+}
+
+.AboutUs-second .imgs-BigColor {
+    padding-top: 25px;
+}
+
+.imgs-BigColor .Img-BigColor {
+    margin-top: 20px;
+}
+
+.count-mechine .carousel-inner {
+    max-height: 270px;
+}
+
+.count-mechine .carousel-item {
+    height: 100%;
+}
+
+.count-mechine .carousel-caption {
+    bottom: 25%;
+    color: black;
+    background-color: #d76565;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1280px) {
+    .history-company h4.Color-Red-t {
+        text-align:center;
+    }
+    .history-company p {
+        margin-bottom: 10px;    
+    }
+    .AboutUsFirst-container .history-company {
+        width: 100%;
+    }
+
+    .AboutUsFirst-container .img-people {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .AbouUs-first .AboutUsFirst-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width:990px) {
+    .AbouUs-first .AboutUsFirst-children {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+    .AboutUsFirst-children .Accordion-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .AboutUsFirst-children .img-BigColor {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:670px){
+    .history-company h4.Color-Red-t {
+        text-align: start !important;
+    }
+}
