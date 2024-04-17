@@ -5,6 +5,8 @@ import Service from "../../components/user/service/Service";
 import Selling from "../../components/user/selling/Selling";
 import Guarantee from "../../components/user/guarantee/Guarantee";
 import Footer from "../../components/user/footer/Footer";
+import OtherDocuments from "../../components/user/otherDocuments/OtherDocuments";
+import ScrollToTopButton from "../../components/user/scrolltotopbutton/ScrollToTopButton";
 
 function HomePage() {
   const [data, setData] = useState([
@@ -71,9 +73,14 @@ function HomePage() {
         <Selling key={index} dataPrint={element} index={index} />
       ))}
 
+      <OtherDocuments />
+
       <Guarantee />
+      <ScrollToTopButton />
 
       <Footer />
+
+      {/* <ProductCard /> */}
     </>
   );
 }

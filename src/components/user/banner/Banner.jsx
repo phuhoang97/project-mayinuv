@@ -1,65 +1,64 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import "./Banner.css";
 import imgBanner from "../../../assets/images/1000_F_343877993_9Od0iow5UMBwbzcR3uiNUJVpUxPUe2Id.jpg";
 import imgBanner2 from "../../../assets/images/20150914060325570-9198.webp";
+import {
+  AppstoreOutlined,
+  BarsOutlined,
+  ContainerOutlined,
+  CreditCardOutlined,
+  BlockOutlined,
+  ExportOutlined,
+} from "@ant-design/icons";
+import { Menu } from "antd";
+function getItem(label, key, icon, children, type) {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  };
+}
+
+const items = [
+  getItem("Máy In UV", "sub1", <BarsOutlined />, [
+    getItem("Máy In UV Cuộn", "Máy In UV Cuộn"),
+    getItem("Máy In UV Phẳng", "Máy In UV Phẳng"),
+    getItem("Máy In UV Hỗn Hợp", "Máy In UV Hỗn Hợp"),
+  ]),
+  getItem("Máy In Theo Công Dụng", "sub2", <AppstoreOutlined />, [
+    getItem("Máy In UV 3D", "Máy In UV 3D"),
+    getItem("Máy In Khổ Lớn", "Máy In Khổ Lớn"),
+    getItem("Máy In khổ A3 - A4", "Máy In khổ A3 - A4"),
+    getItem("Máy In Decal", "Máy In Decal"),
+    getItem("Máy In lụa - In Vải", "Máy In lụa - In Vải"),
+    getItem("Máy In Băng Rôn", "Máy In Băng Rôn"),
+    getItem("Máy In 3D - 5D - 8D", "Máy In 3D - 5D - 8D"),
+  ]),
+  getItem("Máy In Theo Chất Liệu", "sub3", <ContainerOutlined />, [
+    getItem("Máy In Bạt UV", "Máy In Bạt UV"),
+    getItem("Máy In UV Mini", "Máy In UV Mini"),
+    getItem("Máy In PP", "Máy In PP"),
+    getItem("Máy In Trên Kính", "Máy In Trên Kính"),
+    getItem("Máy In Trên Gỗ", "Máy In Trên Gỗ"),
+    getItem("Máy In Trên Mica", "Máy In Trên Mica"),
+    getItem("Máy In Ốp Lưng Điện Thoại", "Máy In Ốp Lưng Điện Thoại"),
+  ]),
+  getItem("Một Số Dòng Khác", "sub4", <CreditCardOutlined />, []),
+  getItem("Máy In UV Cũ", "sub5", <ExportOutlined />, []),
+  getItem("Phụ Kiện", "sub5", <BlockOutlined />, []),
+];
+
+const onClick = (e) => {
+  console.log("click", e);
+};
+
 function Banner() {
   return (
     <div className='banner'>
-      {/* Các thành phầm */}
-
       <div className='banner-left'>
-        <div className='ingredient'>
-          <div className='text-ingredient'>Máy in UV</div>
-          <FontAwesomeIcon
-            icon={faChevronRight}
-            className='icon-arrow-right'
-            // onClick={() => setShowSubMenu(!showSubMenu)}
-          />
-          <ul className='submenu'>
-            <li>Máy In UV Cuộn</li>
-            <li>Máy In UV Phẳng</li>
-          </ul>
-        </div>
-        <div className='ingredient'>
-          <div className='text-ingredient'>Máy in theo công dụng</div>
-          <FontAwesomeIcon icon={faChevronRight} className='icon-arrow-right' />
-          <ul className='submenu'>
-            <li>Máy In UV 3D</li>
-            <li>Máy In Khổ Lớn</li>
-            <li>Máy In khổ A3 - A4</li>
-            <li>Máy In Decal</li>
-            <li>Máy In lụa - In Vải</li>
-            <li>Máy In Băng Rôn</li>
-            <li>Máy In 3D - 5D - 8D</li>
-          </ul>
-        </div>
-        <div className='ingredient'>
-          <div className='text-ingredient'>Máy in theo chất liệu</div>
-          <FontAwesomeIcon icon={faChevronRight} className='icon-arrow-right' />
-          <ul className='submenu'>
-            <li>Máy In Bạt UV</li>
-            <li>Máy In UV Mini</li>
-            <li>Máy In PP</li>
-            <li>Máy In Trên Kính</li>
-            <li>Máy In Trên Gỗ</li>
-            <li>Máy In Trên Mica</li>
-            <li>Máy In Ốp Lưng Điện Thoại</li>
-          </ul>
-        </div>
-        <div className='ingredient'>
-          <div className='text-ingredient'>Một số dòng khác</div>
-          <FontAwesomeIcon icon={faChevronRight} className='icon-arrow-right' />
-        </div>
-        <div className='ingredient'>
-          <div className='text-ingredient'>Máy in UV cũ</div>
-          <FontAwesomeIcon icon={faChevronRight} className='icon-arrow-right' />
-        </div>
-        <div className='ingredient'>
-          <div className='text-ingredient'>Phụ kiện</div>
-          <FontAwesomeIcon icon={faChevronRight} className='icon-arrow-right' />
-        </div>
+        <Menu onClick={onClick} mode='vertical' items={items} />
       </div>
 
       <div className='banner-right'>

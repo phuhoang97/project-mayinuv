@@ -17,7 +17,7 @@
   position: absolute;
   top: 15%;
   left: 15%;
-  z-index: 99999;
+  z-index: 10;
   text-align: center;
 }
 
@@ -25,7 +25,7 @@
   position: absolute;
   right: 0;
   bottom: -14%;
-  z-index: 999999;
+  z-index: 5;
   margin-left: 100px;
 }
 
@@ -50,11 +50,15 @@
   border: none;
   font-size: 25px;
   text-transform: uppercase;
+}
+
+.button-guarantee {
+  position: relative;
   z-index: 9999999;
 }
 
 .now-guarantee:hover {
-  background-color: #dd4040;
+  background-color: #dc4f4f;
 }
 
 .absolute {

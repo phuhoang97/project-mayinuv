@@ -6,10 +6,9 @@ import "slick-carousel/slick/slick-theme.css";
 import productPrint from "../../../assets/images/UV-phang-3020-Crystal-w.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import ProductCard from "../productCard/ProductCard";
 
 function Selling({ dataPrint }) {
-  console.log(dataPrint);
-
   const settings = {
     dots: true,
     infinite: true,
@@ -59,19 +58,7 @@ function Selling({ dataPrint }) {
           <Slider {...settings}>
             {dataPrint.product.map((product, index) => (
               <div className='multi-carousel'>
-                <div className='card-product'>
-                  <div className='product-img'>
-                    <img src={productPrint} alt='photo' />
-                  </div>
-
-                  <div className='icon-view'>
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
-
-                  <div className='name-product'>
-                    <strong>{product.name}</strong>
-                  </div>
-                </div>
+                <ProductCard key={index} dataProduct={product} index={index} />
               </div>
             ))}
           </Slider>

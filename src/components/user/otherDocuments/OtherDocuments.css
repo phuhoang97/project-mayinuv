@@ -1,0 +1,105 @@
+.other-documents {
+  border-top: 2px solid lightgray;
+  margin: 80px 50px 50px 50px;
+}
+
+.documents {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: minmax(250px, auto);
+  grid-gap: 20px;
+  margin: 50px;
+}
+
+.doc-1 {
+  grid-row: 1/3;
+}
+
+.doc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.doc {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.doc:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.doc-compo {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.doc-right {
+  height: 250px;
+  overflow: hidden;
+}
+
+.doc-left {
+  height: 520px;
+  overflow: hidden;
+}
+
+.doc-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+
+.doc-title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.doc-title h4,
+.doc-title p,
+.doc-title button {
+  color: white;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.doc-title h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.doc-title p {
+  font-size: 20px;
+}
+
+.doc-title button {
+  width: 100px;
+  height: 40px;
+  background-color: #e33131;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+}
+
+.btn-documents:hover {
+  background-color: #df4a4a;
+}

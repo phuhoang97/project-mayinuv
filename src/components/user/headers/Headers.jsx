@@ -48,9 +48,6 @@ function Headers() {
               <li className='nav-item'>
                 <Link className='nav-link'>Giới thiệu công ty</Link>
               </li>
-              <li className='nav-item'>
-                <Link className='nav-link'>Liên hệ</Link>
-              </li>
             </ul>
           </nav>
 

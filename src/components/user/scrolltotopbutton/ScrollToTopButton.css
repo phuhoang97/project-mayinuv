@@ -1,0 +1,35 @@
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 250px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.btn-icon-top {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+}
+
+.icon-top {
+  font-size: 24px;
+}
+
+.icon-social img {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+}
+
+.icon-zalo {
+  margin: 20px 0;
+}
+
+.scroll-to-top-button.show {
+  opacity: 1;
+  visibility: visible;
+}
