@@ -2,12 +2,25 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo-slogan.png";
 import { SearchOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import "./Headers.css";
-import { useState } from "react";
-import Banner from "../banner/Banner";
+import { useEffect, useState } from "react";
 
 function Headers() {
   const [active, setActive] = useState("nav-menu");
   const [toggleIcon, setToggleIcon] = useState("nav-toggler");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navToggle = () => {
     active === "nav-menu"
@@ -22,7 +35,7 @@ function Headers() {
 
   return (
     <header>
-      <nav className='navbar navbar-expand-lg '>
+      <nav className={`navbar ${scrolled ? "scrolled" : ""} navbar-expand-lg`}>
         <div className='container-fluid'>
           <Link to={"/"}>
             <img src={logo} alt='Logo' className='img-logo' />
@@ -34,7 +47,7 @@ function Headers() {
                 <Link className='nav-link'>Trang chủ</Link>
               </li>
               <li className='nav-item'>
-                <Link className='nav-link'>Sản phẩm</Link>
+                <Link className='nav-link '>Sản phẩm</Link>
               </li>
               <li className='nav-item'>
                 <Link className='nav-link'>Máy in UV cũ</Link>

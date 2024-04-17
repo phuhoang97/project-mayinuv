@@ -1,11 +1,11 @@
 .banner {
   display: flex;
-  margin-top: 30px;
+  margin-top: 80px;
 }
 
 .banner-left {
   width: 25%;
-  border-right: 2px solid lightgray;
+  border-right: 2px solid lightgray;  
 }
 
 .ingredient {

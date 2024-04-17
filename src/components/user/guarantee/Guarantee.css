@@ -7,7 +7,8 @@
   background-color: black;
   margin-top: 30px;
   position: relative;
-  height: 90vh;
+  height: 80vh;
+  width: 100%;
 }
 
 .content-guarantee h2 {
@@ -23,10 +24,15 @@
 
 .img-guarantee {
   position: absolute;
-  right: 0;
-  bottom: -14%;
+  left: 300px;
+  bottom: -12%;
   z-index: 5;
   margin-left: 100px;
+}
+
+.img-guarantee img {
+  width: 1000px;
+  height: auto;
 }
 
 .contact-guarantee {
@@ -54,7 +60,7 @@
 
 .button-guarantee {
   position: relative;
-  z-index: 9999999;
+  z-index: 9999;
 }
 
 .now-guarantee:hover {

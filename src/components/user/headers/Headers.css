@@ -23,7 +23,25 @@ header {
   width: 180px;
 }
 
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999999;
+  background-color: #fff;
+  border-bottom: 2px solid lightgrey;
+  transition: background-color 0.5s ease;
+}
+
+.scrolled {
+  background-color: rgb(245, 245, 245);
+  border: none;
+}
+
 .nav-menu {
+  list-style: none;
+  padding-left: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -111,11 +129,11 @@ header {
   }
 
   .nav-menu {
-    position: fixed;
-    top: 15vh;
+    position: fixed !important;
+    top: 8vh;
     right: 0;
-    width: 50%;
-    height: 93vh;
+    width: 100%; /* Sử dụng toàn bộ chiều rộng của màn hình */
+    height: calc(100vh - 8vh);
     background: rgb(54, 55, 147);
     flex-direction: column;
     transform: translateX(100%);
