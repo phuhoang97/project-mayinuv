@@ -11,6 +11,8 @@ function App() {
     // <Routes>
     //   <Route path='/' element={<HomePage />}></Route>
     // </Routes>
+
+    // folder Thinh
     <DetailProduct />
     // <PrinterRepair />
     // <NotFound />
