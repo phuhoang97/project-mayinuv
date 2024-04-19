@@ -13,10 +13,10 @@ function App() {
     // </Routes>
 
     // folder Thinh
-    <DetailProduct />
+    // <DetailProduct />
     // <PrinterRepair />
     // <NotFound />
-    // <AboutUs />
+    <AboutUs />
   );
 }
 

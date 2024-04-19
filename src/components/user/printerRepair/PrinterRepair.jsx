@@ -12,6 +12,7 @@ import { Row, Col } from "antd";
 import React, { useState, useEffect } from "react";
 import Headers from "../headers/Headers";
 import Footer from "../footer/Footer";
+import ScrollToTopButton from "../scrolltotopbutton/ScrollToTopButton";
 
 function PrinterRepair() {
   return (
@@ -62,16 +63,6 @@ function PrinterRepair() {
         <section className='about-status'>
           <div className='menu-service'>
             <div className='menu-left'>
-              {/* <button
-                class='button-respon btn btn-primary d-lg-none'
-                type='button'
-                data-bs-toggle='offcanvas'
-                data-bs-target='#offcanvasResponsive'
-                aria-controls='offcanvasResponsive'
-              >
-                <MenuOutlined />
-              </button> */}
-
               <div class='all-menu alert alert-info d-none d-lg-block'>
                 <h3>Mục lục bài viết</h3>
                 <div class='list-menu-t list-group'>
@@ -147,79 +138,6 @@ function PrinterRepair() {
                   </a>
                 </div>
               </div>
-
-              {/* <div
-                class='offcanvas-lg offcanvas-end'
-                tabindex='-1'
-                id='offcanvasResponsive'
-                aria-labelledby='offcanvasResponsiveLabel'
-              >
-                <div class='all-menu offcanvas-header'>
-                  <div className='respon-t'>
-                    <h3 class='offcanvas-title' id='offcanvasResponsiveLabel'>
-                      Mục lục bài viết
-                    </h3>
-                    <button
-                      type='button'
-                      class='btn-close'
-                      data-bs-dismiss='offcanvas'
-                      data-bs-target='#offcanvasResponsive'
-                      aria-label='Close'
-                    ></button>
-                  </div>
-
-                  <div class='list-menu-t list-group'>
-                    <a href='#' class=' list-group-item '>
-                      Quy trình tiếp nhận sửa máy in UV gồm :
-                      <div class='list-menu-th list-group'>
-                        <a href='#' class='list-group-item '>
-                          B1: Tiếp nhận yêu cầu sửa chữa
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          B2: Phân tích lỗi và báo chi phí
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          B3: Chuẩn bị các linh kiện thiết bị, phương tiện sửa
-                          chữa
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          B4: Thanh toán chi phí sau khi hoàn thành
-                        </a>
-                      </div>
-                    </a>
-                    <a href='#' class=' list-group-item '>
-                      Một số lỗi thường gặp nhất cần dịch vụ sửa máy in UV
-                    </a>
-                    <a href='#' class=' list-group-item '>
-                      Một số nguyên nhân thường dẫn đến hỏng hóc máy in UV khổ
-                      lớn
-                      <div class='list-menu-th list-group'>
-                        <a href='#' class='list-group-item '>
-                          1. Sử dụng mực in kém chất lượng
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          2. Không kiểm tra và vệ sinh đầu phun đúng cách
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          3. Không kiểm tra kĩ bề mặt vật liệu trước khi in
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          4. Rửa vệ sinh đầu in không đúng cách
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          5. Các yếu tố môi trường in ấn
-                        </a>
-                      </div>
-                    </a>
-                    <a href='#' class=' list-group-item '>
-                      Điểm mạnh dịch vụ sửa chữa máy in UV của chúng tôi
-                    </a>
-                    <a href='#' class='list-group-item '>
-                      Liên hệ báo giá dịch vụ sửa chữa máy in UV trọn gói
-                    </a>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className='menu-right'>
               <div className='all-step-t'>
@@ -425,9 +343,12 @@ function PrinterRepair() {
                   </button>
                 </div>
                 <div className='more-shop'>
-                  <h3 style={{ color: "rgb(219, 68, 68)", margin: "10px 0" }}>
-                    Related Articles
-                  </h3>
+                  <div className='d-flex align-items-center'>
+                    <div className='brick-red'></div>
+                    <h3 style={{ color: "rgb(219, 68, 68)", margin: "10px 0" }}>
+                      Related Articles
+                    </h3>
+                  </div>
                   <Row gutter={[16, 16]}>
                     <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                       <a href='#' style={{ color: "black" }}>
@@ -488,6 +409,7 @@ function PrinterRepair() {
           </div>
         </section>
       </div>
+      <ScrollToTopButton />
       <Footer />
     </>
   );
