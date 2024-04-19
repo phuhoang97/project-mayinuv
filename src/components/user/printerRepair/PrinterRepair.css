@@ -115,6 +115,7 @@ a:active {
 
 .list-menu-th {
     border-radius: 0!important;
+    padding-left: 10px!important;
 }
 
 .list-menu-t a:hover {
@@ -252,3 +253,11 @@ a.color-change:hover {
     transition: background-position 1.6s; 
 }
 
+.menu-active-t {
+    background-image: linear-gradient(to left,#b20a2c ,#fffbd57e ) !important;
+    color: rgb(41, 37, 37)!important;
+    background-position: left!important;
+    background-size: 200% 100%!important; 
+    background-position: right!important; 
+    transition: background-position 1.6s!important; 
+}

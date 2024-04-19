@@ -14,9 +14,9 @@ function App() {
 
     // folder Thinh
     // <DetailProduct />
-    // <PrinterRepair />
+    <PrinterRepair />
     // <NotFound />
-    <AboutUs />
+    // <AboutUs />
   );
 }
 
