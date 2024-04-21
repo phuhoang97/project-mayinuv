@@ -41,13 +41,13 @@ function Headers() {
             <img src={logo} alt='Logo' className='img-logo' />
           </Link>
 
-          <nav className='nav'>
+          <nav className='nav-header'>
             <ul className={active}>
               <li className='nav-item'>
                 <Link className='nav-link'>Trang chủ</Link>
               </li>
               <li className='nav-item'>
-                <Link className='nav-link '>Sản phẩm</Link>
+                <Link className='nav-link'>Sản phẩm</Link>
               </li>
               <li className='nav-item'>
                 <Link className='nav-link'>Máy in UV cũ</Link>

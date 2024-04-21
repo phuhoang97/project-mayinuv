@@ -1,0 +1,24 @@
+.text-commit strong {
+  font-size: 22px;
+  color: #ff0000;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.li-commit {
+  font-size: 18px;
+  padding: 5px 0;
+  font-weight: 500;
+}
+
+.icon-commit a {
+  color: rgb(44, 44, 44);
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px 0;
+}
+.icon-commit img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}

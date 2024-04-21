@@ -30,8 +30,8 @@ function Footer() {
                     icon={faMapLocationDot}
                     className='icon-footer'
                   />
-                  65A Đường Lô Tư, Bình Hưng Hoà A, Quận Bình Tân, Hồ Chí Minh,
-                  Việt Nam
+                  65A Đường Lô Tư, Bình Hưng Hoà A, <br />
+                  Quận Bình Tân, Hồ Chí Minh, Việt Nam
                 </a>
               </li>
               <li>
