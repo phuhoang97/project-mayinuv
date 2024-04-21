@@ -14,9 +14,12 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage />}></Route>
       <Route path='/detail-post' element={<PostDetailPage />}></Route>
+      <Route path='/detail-product' element={<DetailProduct />}></Route>
+      <Route path='/post-detail' element={<Status />}></Route>
+      <Route path='/post-detail-doc' element={<PostDetailPage />}></Route>
       <Route path='*' element={<NotFound />}></Route>
     </Routes>
-    // <Status />
+    //
   );
 }
 

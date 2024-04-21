@@ -44,7 +44,9 @@ function Headers() {
           <nav className='nav-header'>
             <ul className={active}>
               <li className='nav-item'>
-                <Link className='nav-link'>Trang chủ</Link>
+                <Link to={"/"} className='nav-link'>
+                  Trang chủ
+                </Link>
               </li>
               <li className='nav-item'>
                 <Link className='nav-link'>Sản phẩm</Link>

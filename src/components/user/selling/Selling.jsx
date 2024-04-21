@@ -7,6 +7,7 @@ import productPrint from "../../../assets/images/UV-phang-3020-Crystal-w.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../productCard/ProductCard";
+import { Link } from "react-router-dom";
 
 function Selling({ dataPrint }) {
   const settings = {
@@ -58,7 +59,13 @@ function Selling({ dataPrint }) {
           <Slider {...settings}>
             {dataPrint.product.map((product, index) => (
               <div className='multi-carousel'>
-                <ProductCard key={index} dataProduct={product} index={index} />
+                <Link to={"/detail-product"}>
+                  <ProductCard
+                    key={index}
+                    dataProduct={product}
+                    index={index}
+                  />
+                </Link>
               </div>
             ))}
           </Slider>

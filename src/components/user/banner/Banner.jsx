@@ -11,6 +11,7 @@ import {
   ExportOutlined,
 } from "@ant-design/icons";
 import { Menu } from "antd";
+import { Link } from "react-router-dom";
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -27,15 +28,20 @@ const items = [
     getItem("Máy In UV Phẳng", "Máy In UV Phẳng"),
     getItem("Máy In UV Hỗn Hợp", "Máy In UV Hỗn Hợp"),
   ]),
-  getItem("Máy In Theo Công Dụng", "sub2", <AppstoreOutlined />, [
-    getItem("Máy In UV 3D", "Máy In UV 3D"),
-    getItem("Máy In Khổ Lớn", "Máy In Khổ Lớn"),
-    getItem("Máy In khổ A3 - A4", "Máy In khổ A3 - A4"),
-    getItem("Máy In Decal", "Máy In Decal"),
-    getItem("Máy In lụa - In Vải", "Máy In lụa - In Vải"),
-    getItem("Máy In Băng Rôn", "Máy In Băng Rôn"),
-    getItem("Máy In 3D - 5D - 8D", "Máy In 3D - 5D - 8D"),
-  ]),
+  getItem(
+    <Link to='/post-detail'>Máy In UV 3D</Link>,
+    "sub2",
+    <AppstoreOutlined />,
+    [
+      getItem("Máy In UV 3D", "Máy In UV 3D"),
+      getItem("Máy In Khổ Lớn", "Máy In Khổ Lớn"),
+      getItem("Máy In khổ A3 - A4", "Máy In khổ A3 - A4"),
+      getItem("Máy In Decal", "Máy In Decal"),
+      getItem("Máy In lụa - In Vải", "Máy In lụa - In Vải"),
+      getItem("Máy In Băng Rôn", "Máy In Băng Rôn"),
+      getItem("Máy In 3D - 5D - 8D", "Máy In 3D - 5D - 8D"),
+    ]
+  ),
   getItem("Máy In Theo Chất Liệu", "sub3", <ContainerOutlined />, [
     getItem("Máy In Bạt UV", "Máy In Bạt UV"),
     getItem("Máy In UV Mini", "Máy In UV Mini"),
