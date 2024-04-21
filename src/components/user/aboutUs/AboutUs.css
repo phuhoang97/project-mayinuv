@@ -40,13 +40,17 @@
 }
 
 .Accordion-right .accordion-button {
-    color: #ffffff;
-    background: #786464;
+    color: white;
+    font-weight: 500;
+    background: #2C2C2C;
+    border-top: none;
+    font-weight: 700;
 }
 
 .Accordion-right .accordion-item:first-of-type>.accordion-header .accordion-button,.accordion-button:not(.collapsed) {
-    color: #ffffff !important;
-    background: #786464 !important;
+    color: white !important;
+    background: #2C2C2C !important;
+    border-bottom: none !important;
 }
 
 .Accordion-right .accordion {
@@ -54,9 +58,9 @@
 }
 
 .Accordion-right .accordion-collapse  {
-    background-color: #bea8a8;
-    color: #471e22;
-    font-weight: 700;
+    color: white;
+    background: #2C2C2C;
+    border-top: 1px solid white;
 }
 
 .AboutUs-second {
@@ -82,8 +86,8 @@
 
 .count-mechine .carousel-caption {
     bottom: 25%;
-    color: black;
-    background-color: #d76565;
+    color: whitesmoke;
+    background-color: #2C2C2C;
     font-weight: 700;
 }
 

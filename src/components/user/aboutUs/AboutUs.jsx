@@ -11,8 +11,60 @@ import ExampleCarouselImage from "../../../assets/images/img-footer.jpg";
 import { Row, Col } from "antd";
 import Footer from "../footer/Footer";
 import Headers from "../headers/Headers";
+import React, { useState, useEffect, useRef } from "react";
+import ScrollToTopButton from "../scrolltotopbutton/ScrollToTopButton";
 
 function AboutUs() {
+  const [values, setValues] = useState([
+    { title: "NĂM KINH NGHIỆM", value: 0 },
+    { title: "MÁY MÓC ĐÃ BÁN", value: 0 },
+    { title: "NHÂN VIÊN CÔNG TY", value: 0 },
+    { title: "KHÁCH HÀNG", value: 0 },
+  ]);
+
+  const [isInView, setIsInView] = useState(false);
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (carouselRef.current) {
+        const top = carouselRef.current.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const isVisible = top < windowHeight && top > -windowHeight;
+        setIsInView(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isInView) {
+        setValues((prevValues) =>
+          prevValues.map((item) => {
+            let newValue = item.value;
+            if (item.title === "NĂM KINH NGHIỆM") {
+              newValue = newValue < 10 ? newValue + 1 : 10;
+            } else if (item.title === "MÁY MÓC ĐÃ BÁN") {
+              newValue = newValue < 600 ? newValue + 1 : 600;
+            } else if (item.title === "NHÂN VIÊN CÔNG TY") {
+              newValue = newValue < 30 ? newValue + 1 : 30;
+            } else if (item.title === "KHÁCH HÀNG") {
+              newValue = newValue < 500 ? newValue + 1 : 500;
+            }
+            return { ...item, value: newValue };
+          })
+        );
+      }
+    }, 10);
+
+    return () => clearInterval(interval);
+  }, [isInView]);
+
   return (
     <>
       <Headers />
@@ -109,42 +161,26 @@ function AboutUs() {
               </Row>
             </div>
           </div>
-          <div className='count-mechine' style={{ marginTop: "50px" }}>
+          <div
+            ref={carouselRef}
+            className='count-mechine'
+            style={{ marginTop: "50px" }}
+          >
             <Carousel>
-              <Carousel.Item>
-                <img src={ExampleCarouselImage} text='First slide' />
-                <Carousel.Caption>
-                  <h1>10+</h1>
-                  <p>NĂM KINH NGHIỆM</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img src={ExampleCarouselImage} text='First slide' />
-                <Carousel.Caption>
-                  <h1>600+</h1>
-                  <p>MÁY MÓC ĐÃ BÁN</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img src={ExampleCarouselImage} text='First slide' />
-
-                <Carousel.Caption>
-                  <h1>30+</h1>
-                  <p>NHÂN VIÊN CÔNG TY</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img src={ExampleCarouselImage} text='First slide' />
-
-                <Carousel.Caption>
-                  <h1>500+</h1>
-                  <p>KHÁCH HÀNG </p>
-                </Carousel.Caption>
-              </Carousel.Item>
+              {values.map((item, index) => (
+                <Carousel.Item key={index}>
+                  <img src={ExampleCarouselImage} alt='First slide' />
+                  <Carousel.Caption>
+                    <h1>{item.value} +</h1>
+                    <p>{item.title}</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              ))}
             </Carousel>
           </div>
         </section>
       </div>
+      <ScrollToTopButton />
       <Footer />
     </>
   );

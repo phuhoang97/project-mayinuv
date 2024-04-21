@@ -7,6 +7,7 @@ import NotFound from "./components/user/404/NotFound";
 import AboutUs from "./components/user/aboutUs/AboutUs";
 import DetailPost from "./components/user/detailpost/DetailPost.jsx";
 import PostDetailPage from "./pages/homepage/PostDetailPage.jsx";
+import Status from "./components/user/status/Status";
 
 function App() {
   return (
@@ -15,10 +16,7 @@ function App() {
       <Route path='/detail-post' element={<PostDetailPage />}></Route>
       <Route path='*' element={<NotFound />}></Route>
     </Routes>
-    // <DetailProduct />
-    // <PrinterRepair />
-    // <NotFound />
-    // <AboutUs />
+    // <Status />
   );
 }
 

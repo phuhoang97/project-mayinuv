@@ -1,0 +1,35 @@
+
+.t-children-status .card-status {
+    margin-top: 20px;
+    border-top: 1px solid #dc3545;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.t-children-status .card-status p {
+    position: relative;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+.t-children-status .card-status p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 0.5s ease-in-out;
+}
+
+.t-children-status .card-status p:hover::after {
+    background-position: 0 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0));
+  }
+
+  .t-children-status .card-status p:hover {
+    color: #DB4444;
+    font-weight: 700;
+}

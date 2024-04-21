@@ -12,8 +12,37 @@ import { Row, Col } from "antd";
 import React, { useState, useEffect } from "react";
 import Headers from "../headers/Headers";
 import Footer from "../footer/Footer";
+import ScrollToTopButton from "../scrolltotopbutton/ScrollToTopButton";
 
 function PrinterRepair() {
+  // State to track the active section
+  const [activeSection, setActiveSection] = useState("");
+
+  // Effect to handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get all the sections in the content
+      const sections = document.querySelectorAll("h6[id]");
+
+      // Loop through each section to determine if it's in view
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - sectionHeight / 2) {
+          setActiveSection(section.id);
+        }
+      });
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Headers />
@@ -62,164 +91,137 @@ function PrinterRepair() {
         <section className='about-status'>
           <div className='menu-service'>
             <div className='menu-left'>
-              {/* <button
-                class='button-respon btn btn-primary d-lg-none'
-                type='button'
-                data-bs-toggle='offcanvas'
-                data-bs-target='#offcanvasResponsive'
-                aria-controls='offcanvasResponsive'
-              >
-                <MenuOutlined />
-              </button> */}
-
               <div class='all-menu alert alert-info d-none d-lg-block'>
                 <h3>Mục lục bài viết</h3>
                 <div class='list-menu-t list-group'>
-                  <div className=''>
-                    <a href='#quy-trinh' class='color-change list-group-item '>
+                  <div>
+                    <a
+                      href='#quy-trinh'
+                      className={`color-change list-group-item ${
+                        activeSection === "tiep-nhan" ? "menu-active-t" : ""
+                      }`}
+                    >
                       Quy trình tiếp nhận sửa máy in UV gồm :
                     </a>
                     <div class='list-menu-th list-group'>
                       <a
                         href='#tiep-nhan'
-                        class='color-change list-group-item '
+                        className={`color-change list-group-item ${
+                          activeSection === "tiep-nhan" ? "menu-active-t" : ""
+                        }`}
                       >
                         B1: Tiếp nhận yêu cầu sửa chữa
                       </a>
                       <a
                         href='#phan-tich'
-                        class='color-change list-group-item '
+                        className={`color-change list-group-item ${
+                          activeSection === "phan-tich" ? "menu-active-t" : ""
+                        }`}
                       >
                         B2: Phân tích lỗi và báo chi phí
                       </a>
-                      <a href='#chuan-bi' class='color-change list-group-item '>
+                      <a
+                        href='#chuan-bi'
+                        className={`color-change list-group-item ${
+                          activeSection === "chuan-bi" ? "menu-active-t" : ""
+                        }`}
+                      >
                         B3: Chuẩn bị các linh kiện thiết bị, phương tiện sửa
                         chữa
                       </a>
                       <a
                         href='#thanh-toan'
-                        class='color-change list-group-item '
+                        className={`color-change list-group-item ${
+                          activeSection === "thanh-toan" ? "menu-active-t" : ""
+                        }`}
                       >
                         B4: Thanh toán chi phí sau khi hoàn thành
                       </a>
                     </div>
                   </div>
-                  <a href='#mot-so-loi' class=' color-change list-group-item '>
+                  <a
+                    href='#mot-so-loi'
+                    className={`color-change list-group-item ${
+                      activeSection === "mot-so-loi" ? "menu-active-t" : ""
+                    }`}
+                  >
                     Một số lỗi thường gặp nhất cần dịch vụ sửa máy in UV
                   </a>
-                  <div className=''>
+                  <div>
                     <a
                       href='#mot-so-nguyen'
-                      class='color-change list-group-item '
+                      className={`color-change list-group-item ${
+                        activeSection === "mot-so-nguyen" ? "menu-active-t" : ""
+                      }`}
                     >
                       Một số nguyên nhân thường dẫn đến hỏng hóc máy in UV khổ
                       lớn
                     </a>
                     <div class='list-menu-th list-group'>
-                      <a href='#su-dung' class='color-change list-group-item '>
+                      <a
+                        href='#su-dung'
+                        className={`color-change list-group-item ${
+                          activeSection === "su-dung" ? "menu-active-t" : ""
+                        }`}
+                      >
                         1. Sử dụng mực in kém chất lượng
                       </a>
                       <a
                         href='#khong-kiem-vs'
-                        class='color-change list-group-item '
+                        className={`color-change list-group-item ${
+                          activeSection === "khong-kiem-vs"
+                            ? "menu-active-t"
+                            : ""
+                        }`}
                       >
                         2. Không kiểm tra và vệ sinh đầu phun đúng cách
                       </a>
                       <a
                         href='#khong-kiem-bemat'
-                        class='color-change list-group-item '
+                        className={`color-change list-group-item ${
+                          activeSection === "khong-kiem-bemat"
+                            ? "menu-active-t"
+                            : ""
+                        }`}
                       >
                         3. Không kiểm tra kĩ bề mặt vật liệu trước khi in
                       </a>
-                      <a href='#rua-ve' class='color-change list-group-item '>
+                      <a
+                        href='#rua-ve'
+                        className={`color-change list-group-item ${
+                          activeSection === "rua-ve" ? "menu-active-t" : ""
+                        }`}
+                      >
                         4. Rửa vệ sinh đầu in không đúng cách
                       </a>
-                      <a href='#cacyeu' class='color-change list-group-item '>
+                      <a
+                        href='#cacyeu'
+                        className={`color-change list-group-item ${
+                          activeSection === "cacyeu" ? "menu-active-t" : ""
+                        }`}
+                      >
                         5. Các yếu tố môi trường in ấn
                       </a>
                     </div>
                   </div>
-                  <a href='#diem-manh' class=' color-change list-group-item '>
+                  <a
+                    href='#diem-manh'
+                    className={`color-change list-group-item ${
+                      activeSection === "diem-manh" ? "menu-active-t" : ""
+                    }`}
+                  >
                     Điểm mạnh dịch vụ sửa chữa máy in UV của chúng tôi
                   </a>
-                  <a href='#lien-he' class='color-change list-group-item '>
+                  <a
+                    href='#lien-he'
+                    className={`color-change list-group-item ${
+                      activeSection === "lien-he" ? "menu-active-t" : ""
+                    }`}
+                  >
                     Liên hệ báo giá dịch vụ sửa chữa máy in UV trọn gói
                   </a>
                 </div>
               </div>
-
-              {/* <div
-                class='offcanvas-lg offcanvas-end'
-                tabindex='-1'
-                id='offcanvasResponsive'
-                aria-labelledby='offcanvasResponsiveLabel'
-              >
-                <div class='all-menu offcanvas-header'>
-                  <div className='respon-t'>
-                    <h3 class='offcanvas-title' id='offcanvasResponsiveLabel'>
-                      Mục lục bài viết
-                    </h3>
-                    <button
-                      type='button'
-                      class='btn-close'
-                      data-bs-dismiss='offcanvas'
-                      data-bs-target='#offcanvasResponsive'
-                      aria-label='Close'
-                    ></button>
-                  </div>
-
-                  <div class='list-menu-t list-group'>
-                    <a href='#' class=' list-group-item '>
-                      Quy trình tiếp nhận sửa máy in UV gồm :
-                      <div class='list-menu-th list-group'>
-                        <a href='#' class='list-group-item '>
-                          B1: Tiếp nhận yêu cầu sửa chữa
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          B2: Phân tích lỗi và báo chi phí
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          B3: Chuẩn bị các linh kiện thiết bị, phương tiện sửa
-                          chữa
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          B4: Thanh toán chi phí sau khi hoàn thành
-                        </a>
-                      </div>
-                    </a>
-                    <a href='#' class=' list-group-item '>
-                      Một số lỗi thường gặp nhất cần dịch vụ sửa máy in UV
-                    </a>
-                    <a href='#' class=' list-group-item '>
-                      Một số nguyên nhân thường dẫn đến hỏng hóc máy in UV khổ
-                      lớn
-                      <div class='list-menu-th list-group'>
-                        <a href='#' class='list-group-item '>
-                          1. Sử dụng mực in kém chất lượng
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          2. Không kiểm tra và vệ sinh đầu phun đúng cách
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          3. Không kiểm tra kĩ bề mặt vật liệu trước khi in
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          4. Rửa vệ sinh đầu in không đúng cách
-                        </a>
-                        <a href='#' class='list-group-item '>
-                          5. Các yếu tố môi trường in ấn
-                        </a>
-                      </div>
-                    </a>
-                    <a href='#' class=' list-group-item '>
-                      Điểm mạnh dịch vụ sửa chữa máy in UV của chúng tôi
-                    </a>
-                    <a href='#' class='list-group-item '>
-                      Liên hệ báo giá dịch vụ sửa chữa máy in UV trọn gói
-                    </a>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className='menu-right'>
               <div className='all-step-t'>
@@ -230,12 +232,16 @@ function PrinterRepair() {
                   nơi, thay thế linh kiện hiện đại sẽ giúp bạn tiết kiệm nhiều
                   chi phí tối đa nhất.
                 </h4>
-                <h5
+                <h6
                   id='quy-trinh'
-                  style={{ color: "rgba(219, 68, 68, 1)", margin: "20px 0px" }}
+                  style={{
+                    color: "rgba(219, 68, 68, 1)",
+                    margin: "20px 0px",
+                    fontSize: "20px",
+                  }}
                 >
                   Quy trình tiếp nhận sửa máy in UV gồm
-                </h5>
+                </h6>
                 <h6 id='tiep-nhan'>B1: Tiếp nhận yêu cầu sửa chữa</h6>
                 <p>
                   Khách hàng gửi yêu cầu sửa chữa với tình trạng hiện tại của
@@ -279,20 +285,34 @@ function PrinterRepair() {
                     Dịch vụ sửa máy in uv uy tín – chất lượng
                   </figcaption>
                 </div>
-                <h5
+                <h6
                   id='mot-so-loi'
-                  style={{ color: "rgba(219, 68, 68, 1)", margin: "20px 0px" }}
+                  style={{
+                    color: "rgba(219, 68, 68, 1)",
+                    margin: "20px 0px",
+                    fontSize: "20px",
+                  }}
                 >
                   Một số lỗi thường gặp nhất cần dịch vụ sửa máy in uv
-                </h5>
-                <p>1. Đầu in không in ra mực hoặc in màu sản phẩm bị sai</p>
-                <p>2. Màu in vẫn bị hỗn hợp mặc dù đã vệ sinh đầu phun</p>
-                <p>3. In sản phẩm ra bị lỗi, không đúng với yêu cầu</p>
-                <p>4. Sản phẩm bị ra đường đường kẻ hoặc đường vân dài</p>
-                <p>5. Khi đang in máy đột ngột dừng</p>
-                <p>6. Lỗi mực không in được</p>
-                <p>7. Phần mềm không tương thích khi cài lại</p>
-                <p>8. Máy bị lỗi theo từng mã cố định trên phần mềm báo</p>
+                </h6>
+                <p id='mot-so-loi'>
+                  1. Đầu in không in ra mực hoặc in màu sản phẩm bị sai
+                </p>
+                <p id='mot-so-loi'>
+                  2. Màu in vẫn bị hỗn hợp mặc dù đã vệ sinh đầu phun
+                </p>
+                <p id='mot-so-loi'>
+                  3. In sản phẩm ra bị lỗi, không đúng với yêu cầu
+                </p>
+                <p id='mot-so-loi'>
+                  4. Sản phẩm bị ra đường đường kẻ hoặc đường vân dài
+                </p>
+                <p id='mot-so-loi'>5. Khi đang in máy đột ngột dừng</p>
+                <p id='mot-so-loi'>6. Lỗi mực không in được</p>
+                <p id='mot-so-loi'>7. Phần mềm không tương thích khi cài lại</p>
+                <p id='mot-so-loi'>
+                  8. Máy bị lỗi theo từng mã cố định trên phần mềm báo
+                </p>
                 <div className='Refer-prices text-center align-center'>
                   <a href='#' style={{ color: "white" }}>
                     <LinkOutlined /> Xem thêm máy in UV cuộn
@@ -305,12 +325,16 @@ function PrinterRepair() {
                     vũng tàu{" "}
                   </figcaption>
                 </div>
-                <h5
+                <h6
                   id='mot-so-nguyen'
-                  style={{ color: "rgba(219, 68, 68, 1)", margin: "20px 0px" }}
+                  style={{
+                    color: "rgba(219, 68, 68, 1)",
+                    margin: "20px 0px",
+                    fontSize: "20px",
+                  }}
                 >
                   Một số nguyên nhân thường dẫn hên hỏng hóc máy in uv khổ lớn
-                </h5>
+                </h6>
                 <h6 id='su-dung'>1. Sử dụng mực in kém chất lượng</h6>
                 <p>
                   Bởi việc giá thành rẻ dẫn đến một số doanh nghiệp in ấn lại
@@ -380,12 +404,16 @@ function PrinterRepair() {
                   đầu phun và làm tắc đầu phun, nên vệ sinh sạch sẽ môi trường
                   xung quanh để máy được vận hành trơn tru
                 </p>
-                <h5
+                <h6
                   id='diem-manh'
-                  style={{ color: "rgba(219, 68, 68, 1)", margin: "20px 0px" }}
+                  style={{
+                    color: "rgba(219, 68, 68, 1)",
+                    margin: "20px 0px",
+                    fontSize: "20px",
+                  }}
                 >
                   Điểm mạnh dịch vụ sửa máy in uv của chúng tôi
-                </h5>
+                </h6>
                 <p>
                   1. Với kinh nghiệm 10 năm trong lĩnh vực máy in uv, chúng tôi
                   tự tin 100% về việc sửa chữa các lỗi trên nhiều loại máy in uv
@@ -411,12 +439,16 @@ function PrinterRepair() {
                   máy in để đảm bảo khách hàng vẫn sử dụng máy được hiệu quả
                   nhất.
                 </p>
-                <h5
+                <h6
                   id='lien-he'
-                  style={{ color: "rgba(219, 68, 68, 1)", margin: "20px 0px" }}
+                  style={{
+                    color: "rgba(219, 68, 68, 1)",
+                    margin: "20px 0px",
+                    fontSize: "20px",
+                  }}
                 >
                   Liên hệ báo giá dịch vụ sửa máy in trọn gói
-                </h5>
+                </h6>
                 <div className='text-center' style={{ marginBottom: "10px" }}>
                   <button type='button' class='btn btn-danger'>
                     <a href='tel:0935389988' style={{ color: "white" }}>
@@ -425,9 +457,12 @@ function PrinterRepair() {
                   </button>
                 </div>
                 <div className='more-shop'>
-                  <h3 style={{ color: "rgb(219, 68, 68)", margin: "10px 0" }}>
-                    Related Articles
-                  </h3>
+                  <div className='d-flex align-items-center'>
+                    <div className='brick-red'></div>
+                    <h3 style={{ color: "rgb(219, 68, 68)", margin: "10px 0" }}>
+                      Related Articles
+                    </h3>
+                  </div>
                   <Row gutter={[16, 16]}>
                     <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                       <a href='#' style={{ color: "black" }}>
@@ -488,6 +523,7 @@ function PrinterRepair() {
           </div>
         </section>
       </div>
+      <ScrollToTopButton />
       <Footer />
     </>
   );
