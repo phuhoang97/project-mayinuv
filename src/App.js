@@ -5,6 +5,7 @@ import DetailProduct from "./components/user/DetailProduct/DetailProduct";
 import PrinterRepair from "./components/user/printerRepair/PrinterRepair";
 import NotFound from "./components/user/404/NotFound";
 import AboutUs from "./components/user/aboutUs/AboutUs";
+import Status from "./components/user/status/Status";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
 
     // folder Thinh
     // <DetailProduct />
-    <PrinterRepair />
+    // <PrinterRepair />
+    <Status />
     // <NotFound />
     // <AboutUs />
   );
