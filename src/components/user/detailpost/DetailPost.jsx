@@ -153,7 +153,7 @@ function DetailPost() {
             <CompanyCommit />
           </div>
 
-          <div className='col-2 category '>
+          <div className='col-2 category-doc'>
             <div>
               <div>
                 <div className='article-category'>

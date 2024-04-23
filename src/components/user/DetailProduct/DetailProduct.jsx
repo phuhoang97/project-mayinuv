@@ -3,7 +3,7 @@ import productimg1 from "../../../assets/images/may-in-uv-phang-bossron-1325.jpg
 import productimg2 from "../../../assets/images/20150914060325570-9198.webp";
 import productimg3 from "../../../assets/images/c3ior0906pl0u.jpg";
 import { HeartFilled, HeartOutlined } from "@ant-design/icons";
-import { Tabs, Col, Row, Spin } from "antd";
+import { Tabs, Col, Row, Spin, Tag } from "antd";
 import Footer from "../footer/Footer";
 import Headers from "../headers/Headers";
 
@@ -105,6 +105,8 @@ function DetailProduct() {
     }
   };
 
+  const arrTags = data.data.tags.split(", ");
+
   // Kiểm tra nếu data chưa được gán giá trị, tránh lỗi khi truy cập thuộc tính
 
   return (
@@ -197,36 +199,14 @@ function DetailProduct() {
                         </div>
                         <div className='tags'>
                           <span>
-                            Tags: <span>{data.data.tags}</span>
+                            Tags:
+                            {arrTags.map((e, i) => (
+                              <Tag>{e}</Tag>
+                            ))}
                           </span>
                         </div>
                       </div>
                       <div className=' mt-20 d-flex justify-content-between'>
-                        <div
-                          class='btn-group'
-                          role='group'
-                          aria-label='Basic mixed styles example'
-                        >
-                          <button
-                            style={{ backgroundColor: "#000000" }}
-                            type='button'
-                            onClick={decreaseQuantity}
-                            class='decreaseQuantity btn btn-dark'
-                          >
-                            -
-                          </button>
-                          <button type='button' class='quantity btn btn-light '>
-                            {quantity}
-                          </button>
-                          <button
-                            style={{ backgroundColor: "#DB4444" }}
-                            onClick={increaseQuantity}
-                            type='button'
-                            class='increaseQuantity btn btn-danger'
-                          >
-                            +
-                          </button>
-                        </div>
                         <button
                           style={{ backgroundColor: "#DB4444" }}
                           type='button'
@@ -234,14 +214,6 @@ function DetailProduct() {
                         >
                           Mua hàng
                         </button>
-                        {data.data.active == 1 ? (
-                          <HeartOutlined
-                            onClick={updateFavoriteStatus}
-                            className='heart-outline'
-                          />
-                        ) : (
-                          <HeartFilled className='heart-filled' />
-                        )}
                       </div>
                     </div>
                   </div>

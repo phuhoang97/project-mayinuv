@@ -40,12 +40,13 @@ header {
   z-index: 99999999;
   background-color: #fff;
   border-bottom: 2px solid lightgrey;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
 }
 
 .scrolled {
   background-color: rgb(245, 245, 245);
   border: none;
+  transition-delay: 0.1s;
 }
 
 .nav-menu {
