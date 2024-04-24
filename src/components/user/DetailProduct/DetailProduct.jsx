@@ -29,7 +29,7 @@ function DetailProduct() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://ecommerce-printer-be.vercel.app/api/products/1"
+          "https://ecommerce-printer-be.vercel.app/api/products/10"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -46,7 +46,7 @@ function DetailProduct() {
     const fetchDataProducts = async () => {
       try {
         const response = await fetch(
-          "https://ecommerce-printer-be.vercel.app/api/products"
+          "https://ecommerce-printer-be.vercel.app/api/products/10"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -64,7 +64,7 @@ function DetailProduct() {
   const updateFavoriteStatus = async () => {
     try {
       const response = await fetch(
-        "https://ecommerce-printer-be.vercel.app/api/products/1",
+        "https://ecommerce-printer-be.vercel.app/api/products/10",
         {
           method: "PUT",
           headers: {
@@ -93,16 +93,6 @@ function DetailProduct() {
 
   const handleThumbnailClick = (newSrc) => {
     setMainImage(newSrc);
-  };
-
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
   };
 
   const arrTags = data.data.tags.split(", ");

@@ -22,7 +22,7 @@ function ProductCard({ dataProduct }) {
         </div>
       </div>
       <div className='mains-images'>
-        <img src={imgProduct} alt='photo' />
+        <img src={dataProduct.images[0]} alt='photo' />
       </div>
 
       <div className='product-details'>

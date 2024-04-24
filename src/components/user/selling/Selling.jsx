@@ -1,15 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Selling.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import productPrint from "../../../assets/images/UV-phang-3020-Crystal-w.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../productCard/ProductCard";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-function Selling({ dataPrint }) {
+function Selling({ idCategory }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -37,6 +35,17 @@ function Selling({ dataPrint }) {
     ],
   };
 
+  const [dataProducts, setDataProducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://ecommerce-printer-be.vercel.app/api/products?category_id=${idCategory.id}`
+      )
+      .then((res) => setDataProducts(res.data.data))
+      .catch((err) => console.log(err));
+  }, [idCategory.id]);
+
   return (
     <>
       <div className='best-selling'>
@@ -49,7 +58,7 @@ function Selling({ dataPrint }) {
 
         <div className='title-component'>
           <h3 className='company-goals'>
-            <strong>{dataPrint.category}</strong>
+            <strong>{idCategory.name}</strong>
           </h3>
 
           <button className='view-all'>View All</button>
@@ -57,14 +66,10 @@ function Selling({ dataPrint }) {
 
         <div>
           <Slider {...settings}>
-            {dataPrint.product.map((product, index) => (
-              <div className='multi-carousel'>
-                <Link to={"/detail-product"}>
-                  <ProductCard
-                    key={index}
-                    dataProduct={product}
-                    index={index}
-                  />
+            {dataProducts.map((product, index) => (
+              <div className='multi-carousel' key={index}>
+                <Link to={`/products/${product.id}`}>
+                  <ProductCard dataProduct={product} />
                 </Link>
               </div>
             ))}

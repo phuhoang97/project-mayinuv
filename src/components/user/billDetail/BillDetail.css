@@ -1,6 +1,7 @@
 .compo-billing {
-  margin-top: 80px;
+  margin-top: 110px;
   position: relative;
+  margin-bottom: 50px;
 }
 
 .form-billding {
@@ -14,8 +15,8 @@
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  font-size: 35px;
+  margin-bottom: 20px;
+  font-size: 40px;
 }
 
 .input-billding {
