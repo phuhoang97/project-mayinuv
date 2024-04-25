@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import FormInput from "./FormInput";
 import imgProduct from "../../../assets/images/may-in-uv-phang-bossron-1325.jpg";
 import { CloseOutlined } from "@ant-design/icons";
+import axios from "axios";
 
 function BillDetail() {
+  // const [provinces, setProvinces] = useState([]);
+  // const [districts, setDistricts] = useState([]);
+  // const [wards, setWards] = useState([]);
+
   const initialValues = {
     username: "",
     nameCompany: "",
     email: "",
     phoneNumber: "",
+    // province: "",
+    // district: "",
+    // ward: "",
     address: "",
   };
 
@@ -30,7 +38,45 @@ function BillDetail() {
       .matches(/^\d+$/, "Số điện thoại phải là số")
       .required("Số điện thoại không được để trống"),
     address: Yup.string().required("Địa chỉ không được để trống"),
+    // province: Yup.string().required("Tỉnh/Thành phố không được để trống"),
+    // district: Yup.string().required("Quận/Huyện/Thị xã không được để trống"),
+    // ward: Yup.string().required("Phường/Xã không được để trống"),
   });
+
+  // useEffect(() => {
+  //   // Lấy danh sách tỉnh/thành phố
+  //   axios
+  //     .get("https://vn-public-apis.fpo.vn/provinces/getAll?limit=-1")
+  //     .then((res) => setProvinces(res.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+  // const handleProvinceChange = (provinceCode, props) => {
+  //   // Lấy danh sách quận/huyện/thị xã theo tỉnh/thành phố
+  //   axios
+  //     .get(
+  //       `https://vn-public-apis.fpo.vn/districts/getByProvince?provinceCode=${provinceCode}&limit=-1`
+  //     )
+  //     .then((res) => {
+  //       setDistricts(res.data);
+  //       props.setFieldValue("district", ""); // Reset giá trị quận/huyện/...
+  //       props.setFieldValue("ward", ""); // Reset giá trị phường/xã
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
+  // const handleDistrictChange = (districtCode, props) => {
+  //   // Lấy danh sách phường/xã theo quận/huyện/thị xã
+  //   axios
+  //     .get(
+  //       `https://vn-public-apis.fpo.vn/wards/getByDistrict?districtCode=${districtCode}&limit=-1`
+  //     )
+  //     .then((res) => {
+  //       setWards(res.data);
+  //       props.setFieldValue("ward", ""); // Reset giá trị phường/xã
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   const handleSubmit = (values, { setSubmitting }) => {
     // Xử lý logic khi submit form
@@ -49,7 +95,7 @@ function BillDetail() {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
-              {({ isSubmitting }) => (
+              {(props) => (
                 <Form className='form-input'>
                   <FormInput
                     name='username'
@@ -75,6 +121,70 @@ function BillDetail() {
                     placeholder='Số điện thoại ...'
                     label='Số điện thoại'
                   />
+                  {/* <>
+                    <div className='form-group'>
+                      <label htmlFor='province'>Tỉnh/Thành phố</label>
+                      <Field
+                        as='select'
+                        name='province'
+                        onChange={(e) => {
+                          props.setFieldValue("province", e.target.value);
+                          handleProvinceChange(e.target.value, props);
+                        }}
+                      >
+                        <option value=''>Chọn Tỉnh/Thành phố</option>
+                        {provinces.map((province) => (
+                          <option key={province.code} value={province.code}>
+                            {province.name}
+                          </option>
+                        ))}
+                      </Field>
+                      <ErrorMessage
+                        name='province'
+                        component='div'
+                        className='error-message'
+                      />
+                    </div>
+                    <div className='form-group'>
+                      <label htmlFor='district'>Quận/Huyện/Thị xã</label>
+                      <Field
+                        as='select'
+                        name='district'
+                        onChange={(e) => {
+                          props.setFieldValue("district", e.target.value);
+                          handleDistrictChange(e.target.value, props);
+                        }}
+                      >
+                        <option value=''>Chọn Quận/Huyện/Thị xã</option>
+                        {districts.map((district) => (
+                          <option key={district.code} value={district.code}>
+                            {district.name}
+                          </option>
+                        ))}
+                      </Field>
+                      <ErrorMessage
+                        name='district'
+                        component='div'
+                        className='error-message'
+                      />
+                    </div>
+                    <div className='form-group'>
+                      <label htmlFor='ward'>Phường/Xã</label>
+                      <Field as='select' name='ward'>
+                        <option value=''>Chọn Phường/Xã</option>
+                        {wards.map((ward) => (
+                          <option key={ward.code} value={ward.code}>
+                            {ward.name}
+                          </option>
+                        ))}
+                      </Field>
+                      <ErrorMessage
+                        name='ward'
+                        component='div'
+                        className='error-message'
+                      />
+                    </div>
+                  </> */}
                   <FormInput
                     name='address'
                     type='text'
@@ -84,7 +194,7 @@ function BillDetail() {
                   <button
                     className='btn-billding'
                     type='submit'
-                    disabled={isSubmitting}
+                    disabled={props.isSubmitting}
                   >
                     Đặt Hàng
                   </button>

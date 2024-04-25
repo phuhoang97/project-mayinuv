@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "../productCard/ProductCard";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Flex, Spin } from "antd";
 
 function Selling({ idCategory }) {
   const settings = {
@@ -35,15 +36,23 @@ function Selling({ idCategory }) {
     ],
   };
 
+  console.log(idCategory);
+
   const [dataProducts, setDataProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://ecommerce-printer-be.vercel.app/api/products?category_id=${idCategory.id}`
-      )
-      .then((res) => setDataProducts(res.data.data))
-      .catch((err) => console.log(err));
+    if (idCategory && idCategory.id) {
+      axios
+        .get(
+          `https://ecommerce-printer-be.vercel.app/api/products?category_id=${idCategory.id}`
+        )
+        .then((res) => {
+          setDataProducts(res.data.data);
+          setLoading(false);
+        })
+        .catch((err) => console.log(err));
+    }
   }, [idCategory.id]);
 
   return (
@@ -65,15 +74,22 @@ function Selling({ idCategory }) {
         </div>
 
         <div>
-          <Slider {...settings}>
-            {dataProducts.map((product, index) => (
-              <div className='multi-carousel' key={index}>
-                <Link to={`/products/${product.id}`}>
-                  <ProductCard dataProduct={product} />
-                </Link>
-              </div>
-            ))}
-          </Slider>
+          {loading ? (
+            // Hiển thị loading hoặc placeholder
+            <Flex align='center' justify='center' gap='middle'>
+              <Spin size='large' />
+            </Flex>
+          ) : (
+            <Slider {...settings}>
+              {dataProducts.map((product) => (
+                <div className='multi-carousel' key={product.id}>
+                  <Link to={`/products/${product.id}`}>
+                    <ProductCard dataProduct={product} />
+                  </Link>
+                </div>
+              ))}
+            </Slider>
+          )}
         </div>
       </div>
       ;

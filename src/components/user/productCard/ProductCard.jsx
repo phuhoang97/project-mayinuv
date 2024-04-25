@@ -1,5 +1,6 @@
 import React from "react";
-import imgProduct from "../../../assets/images/may-in-uv-phang-bossron-1325.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "./ProductCard.css";
 import logoCard from "../../../assets/logo/logo-slogan.png";
 import { EyeOutlined, ShoppingCartOutlined } from "@ant-design/icons";
@@ -22,7 +23,11 @@ function ProductCard({ dataProduct }) {
         </div>
       </div>
       <div className='mains-images'>
-        <img src={dataProduct.images[0]} alt='photo' />
+        <LazyLoadImage
+          alt='product-photo'
+          src={dataProduct.images[0]}
+          effect='blur'
+        />
       </div>
 
       <div className='product-details'>
