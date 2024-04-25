@@ -14,9 +14,9 @@ function App() {
     // </Routes>
 
     // folder Thinh
-    // <DetailProduct />
+    <DetailProduct />
     // <PrinterRepair />
-    <Status />
+    // <Status />
     // <NotFound />
     // <AboutUs />
   );
