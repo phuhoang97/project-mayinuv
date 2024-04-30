@@ -3,6 +3,7 @@ import "../DetailProduct/DetailProduct";
 import Footer from "../footer/Footer";
 import Headers from "../headers/Headers";
 function NotFound() {
+  
   return (
     <>
       <Headers />
