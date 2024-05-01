@@ -15,17 +15,17 @@
 .imgs-mechine {
   flex-direction: column;
   display: flex;
-  justify-content: space-between;
 }
 
 .imgs-mechine .imgs-product {
-  max-width: 170px;
+  width: 120px;
   height: 90px;
 }
 
 .infomation-mechine .img-mechine {
-  max-width: 650px;
-  height: 448px;
+  width: 400px;
+  height: 300px;
+  margin-left: 2%;
 }
 
 .t-container img {
@@ -35,8 +35,7 @@
 
 .imgsProduct-container {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  width: 55%;
 }
 
 .name-information-mechine h1 {
@@ -48,7 +47,7 @@
 }
 
 div.infomation-mechine-children {
-  width: 52%;
+  width: 70%;
 }
 
 .c-pointer {
@@ -128,12 +127,15 @@ div.infomation-mechine-children {
   div.infomation-mechine-children {
     width: 44%;
   }
+  .mt-20 .btn-buy {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .infomation-mechine .img-mechine {
-    max-width: 80%;
-    height: 448px;
+    max-width: 100%;
+    height: 360px;
   }
   .name-information-mechine h1 {
     font-size: 22px;
@@ -143,13 +145,10 @@ div.infomation-mechine-children {
   }
 }
 
-@media screen and (max-width: 912px) {
-  div.infomation-mechine-children {
-    width: 50%;
-  }
+.third-section .otherImgProducts {
+  height: 321.02px;
 }
-
-@media screen and (max-width: 853px) {
+@media screen and (max-width: 980px) {
   .infomation-mechine {
     flex-wrap: wrap;
   }
@@ -226,4 +225,10 @@ div.infomation-mechine-children {
   max-width: 500px;
   height: auto;
   margin: 0 auto;
+}
+
+.otherImgProducts:hover .group-icon .icon {
+  opacity: 1; /* Khi hover vào .group-icon, hiển thị icon */
+  transform: translateY(0); /* Di chuyển icon từ dưới lên */
+  font-weight: 700;
 }

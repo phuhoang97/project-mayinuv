@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/detail-post' element={<PostDetailPage />}></Route>
-        <Route path='/products:id' element={<DetailProduct />}></Route>
+        <Route path='/products/:id' element={<DetailProduct />}></Route>
         <Route path='/post-detail' element={<Status />}></Route>
         <Route path='/post-detail-doc' element={<PostDetailPage />}></Route>
         <Route path='/billding-detail' element={<BilldingPage />}></Route>
