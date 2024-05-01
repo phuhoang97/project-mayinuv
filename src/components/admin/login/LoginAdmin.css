@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif; */
+}
+
+.body-login {
+  background-image: url(https://i.pinimg.com/736x/a8/23/3e/a8233ed98104adb0b1fc4908aaee8ddc.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  position: relative;
+  width: 450px;
+  height: 500px;
+  backdrop-filter: blur(40px);
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  transition: transform 0.6s ease, height 0.2s ease-in-out,
+    opacity 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.form-box form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.input-box {
+  width: 80%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  /* border-bottom: 2px solid white; */
+  align-items: center;
+  margin: 40px 0px;
+}
+
+.input-box div {
+  display: flex;
+  align-items: center;
+}
+
+.input-box div label {
+  transition: 0.4s;
+  padding-left: 10px;
+  font-size: 17px;
+}
+
+.input-box input {
+  width: 100%;
+  position: absolute;
+  font-size: 16px;
+  border: none;
+  /* background: white; */
+  height: 100%;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 18px 20px;
+}
+
+/* .input-box input:focus {
+  border-bottom: 1px solid lightblue;
+} */
+
+.input-box div input:focus ~ label,
+.input-box div input:valid ~ label {
+  transform: translateY(-25px);
+}
+
+.input-box ion-icon {
+  font-size: 25px;
+}
+
+.check-box {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.submit-btn {
+  width: 80%;
+  cursor: pointer;
+  border-radius: 20px;
+  margin: 30px 0px;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: rgb(195, 195, 195);
+  font-weight: 500;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: lightgray;
+  transition: 0.3s;
+}
+
+.form-box h5,
+.check-box label,
+.check-box input {
+  cursor: pointer;
+}
+
+.icon-eye {
+  color: gray;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  top: 70%;
+  transform: translate(-50%, 0);
+  font-size: 20px;
+}

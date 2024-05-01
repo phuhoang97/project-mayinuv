@@ -1,7 +1,9 @@
 import React from "react";
+import "./LoginPage";
+import LoginAdmin from "../../components/admin/login/LoginAdmin";
 
 function LoginPage() {
-  return <div>LoginPage</div>;
+  return <LoginAdmin />;
 }
 
 export default LoginPage;
