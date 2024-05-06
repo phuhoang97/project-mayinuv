@@ -1,0 +1,35 @@
+.main-dashboard {
+  width: 100%;
+  padding: 20px;
+}
+
+.main-dashboard .info-data {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.main-dashboard .info-data .card {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.text-card-dashboard {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.head-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.main-dashboard .card .head .head-content p {
+  font-size: 20px;
+}

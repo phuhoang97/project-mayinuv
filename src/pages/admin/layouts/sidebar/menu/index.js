@@ -17,24 +17,10 @@ const MenuSidebar = () => {
   const { pathname } = useLocation();
 
   const items = [
-    getItem(
-      "Trang quản lý",
-      "dashboard",
-      null,
-      [
-        getItem(null, null, null, null, "divider"),
-        getItem("Danh sách đăng ký tư vấn", "/admin/register-advise", null),
-        getItem("Liên hệ/Thắc mắc", "/admin/contact-comments"),
-        getItem("Dịch vụ", "/admin/service"),
-        // getItem("Thông tin dịch vụ", "/admin/content-web"),
-        getItem("Bảng giá", "/admin/price-service"),
-        getItem("Sản phẩm nha khoa", "/admin/product-dentistry"),
-        getItem("Khách hàng", "/admin/customer-documents"),
-        getItem("Tin tức", "/admin/news"),
-        getItem("Thoát", "logout"),
-      ],
-      "group"
-    ),
+    getItem("Dashboard", ""),
+    getItem("Quản lý sản phẩm", "/admin/manager-product"),
+    getItem("Quản lý order", "/admin/manager-order"),
+    getItem("Thoát", "logout"),
   ];
 
   const onClick = ({ key }) => {
@@ -63,6 +49,7 @@ const MenuSidebar = () => {
           border: "none",
           height: "100%",
           overflow: "hidden auto",
+          paddingTop: "20px",
         }}
         defaultSelectedKeys={[pathname]}
         items={items}

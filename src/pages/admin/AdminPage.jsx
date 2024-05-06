@@ -1,9 +1,8 @@
 import { ConfigProvider, Layout } from "antd";
-import React, { useEffect } from "react";
+import React from "react";
 import MainContent from "./layouts/contents";
 import MainSidebar from "./layouts/sidebar";
 import MainHeader from "./layouts/header";
-import CryptoJS from "crypto-js";
 import { useNavigate } from "react-router";
 
 const AdminPage = () => {
