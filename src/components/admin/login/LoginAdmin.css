@@ -122,7 +122,7 @@
   cursor: pointer;
 }
 
-.icon-eye {
+.input-box .icon-eye {
   color: gray;
   position: absolute;
   z-index: 9999;
