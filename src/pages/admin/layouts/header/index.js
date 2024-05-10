@@ -13,21 +13,21 @@ const MainHeader = () => {
         display: "flex",
         alignItems: "center",
         gap: "90px",
-        height: "15%",
+        height: "10%",
       }}
     >
       <div>
         <img
           src={logo}
           alt='Logo'
-          width={200}
+          width={150}
           style={{ margin: "20px", padding: "10px" }}
         />
       </div>
       <div
         style={{
           fontWeight: "600",
-          fontSize: "2.25rem",
+          fontSize: "25px",
           textTransform: "uppercase",
           color: "#333",
         }}
