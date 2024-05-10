@@ -17,20 +17,30 @@ function Selling({ idCategory }) {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1440,
         settings: {
-          slidesToShow: 3, // Hiển thị 3 mục trên mỗi slide khi màn hình nhỏ hơn 1024px
+          slidesToShow: 3, // Hiển thị 3 mục trên mỗi slide khi màn hình nhỏ hơn hoặc bằng 1447px
           slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1115,
         settings: {
-          slidesToShow: 2, // Hiển thị 2 mục trên mỗi slide khi màn hình nhỏ hơn 600px
+          slidesToShow: 2, // Hiển thị 2 mục trên mỗi slide khi màn hình nhỏ hơn hoặc bằng 1115px
           slidesToScroll: 1,
-          initialSlide: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+     
+      {
+        breakpoint: 765,
+        settings: {
+          slidesToShow: 1, // Hiển thị 1 mục trên mỗi slide khi màn hình nhỏ hơn 400px
+          slidesToScroll: 1,
+          initialSlide: 0,
         },
       },
     ],

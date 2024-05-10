@@ -103,3 +103,10 @@
 .btn-documents:hover {
   background-color: #df4a4a;
 }
+
+@media screen and (max-width: 1160px){
+  .documents {
+      grid-template-columns: 1fr;
+      margin: 0;
+  }
+}
