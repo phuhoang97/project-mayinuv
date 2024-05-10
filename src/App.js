@@ -30,6 +30,7 @@ function App() {
         <Route path='/detail-post' element={<PostDetailPage />}></Route>
         <Route path='/products/:id' element={<DetailProduct />}></Route>
         <Route path='/post-detail' element={<Status />}></Route>
+        <Route path='/post-detail/:id' element={<Status />}></Route>
         <Route path='/post-detail-doc' element={<PostDetailPage />}></Route>
         <Route path='/billding-detail' element={<BilldingPage />}></Route>
         <Route path='/login' element={<LoginPage />} />

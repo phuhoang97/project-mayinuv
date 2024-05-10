@@ -54,11 +54,11 @@ header {
   padding-left: 0;
   display: flex;
   font-weight: 500;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-evenly;
-  /* justify-content: space-around; */
-  /* gap: 1rem; */
-  /* height: 8vh; */
+  justify-content: space-around;
+  gap: 1rem;
+  height: 8vh;
 }
 
 .nav-item .nav-link {
@@ -150,6 +150,19 @@ header {
     flex-direction: column;
     transform: translateX(100%);
     transition: 0.5s ease-in;
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      font-weight: 500;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      gap: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar  .container-fluid {
+    justify-content: center !important;
   }
 }
 
