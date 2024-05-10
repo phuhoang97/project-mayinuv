@@ -8,26 +8,28 @@ import CompanyCommit from "../companyCommit/CompanyCommit";
 
 function DetailPost() {
   return (
-    <div className='detail-post'>
-      <div className='img-banner-post'>
-        <nav aria-label='breadcrumb' className='breadcrumb-list'>
-          <ol className='breadcrumb'>
-            <li className='breadcrumb-item'>
-              <Link>Home</Link>
-            </li>
-            <li className='breadcrumb-item'>
-              <Link>Máy In Theo Công Dụng</Link>
-            </li>
-            <li className='breadcrumb-item active' aria-current='page'>
-              Máy In UV 3D
-            </li>
-          </ol>
-        </nav>
-        {/* <img src={imgBannerPost} alt='photo' /> */}
-        <h2>Máy In UV 3D – Máy Sẵn Tại Kho – Giá Máy Rẻ – Chính Hãng</h2>
+    <div className="detail-post">
+      <div className="img-banner-post">
+        <div className="container">
+          <nav aria-label="breadcrumb" className="breadcrumb-list">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item ">
+                <Link style={{textDecoration:"none"}} className="breadcrumb-item active">Home</Link>
+              </li>
+              <li className="breadcrumb-item">
+                <Link style={{textDecoration:"none"}} className="breadcrumb-item active">Máy In Theo Công Dụng</Link>
+              </li>
+              <li className="breadcrumb-item active" aria-current="page">
+                Máy In UV 3D
+              </li>
+            </ol>
+          </nav>
+          {/* <img src={imgBannerPost} alt='photo' /> */}
+          <h2>Máy In UV 3D – Máy Sẵn Tại Kho – Giá Máy Rẻ – Chính Hãng</h2>
+        </div>
       </div>
-      <div className='container'>
-        <div className='row'>
+      <div className="container">
+        <div className="row">
           {/* <div className='col-2 menu-post'>
             <nav
               id='navbar-example3'
@@ -56,12 +58,12 @@ function DetailPost() {
               </nav>
             </nav>
           </div> */}
-          <div className='col-10'>
+          <div className="col-10">
             <div
-              data-bs-spy='scroll'
-              data-bs-target='#navbar-example3'
-              data-bs-smooth-scroll='true'
-              className='scrollspy-example-2 '
+              data-bs-spy="scroll"
+              data-bs-target="#navbar-example3"
+              data-bs-smooth-scroll="true"
+              className="scrollspy-example-2 "
               tabIndex={0}
             >
               <h3>
@@ -72,7 +74,7 @@ function DetailPost() {
                 <br /> Vậy máy in uv 3d cần có yêu cầu gì khi chọn mua và giá
                 thành trên thị trường hiện nay thế nào?
               </h3>
-              <p className=''>
+              <p className="">
                 Công Ty Bigcolor với kinh nghiệm 10 năm trong lĩnh vực cung cấp
                 các dòng máy in uv các loại như máy uv phẳng, máy uv cuộn các
                 khổ lớn nhỏ khác nhau. Đội ngũ nhân viên kỹ thuật trên 5 người
@@ -81,7 +83,7 @@ function DetailPost() {
                 trường đi kèm với chính sách bảo hành trọn gói để đáp ứng đầy đủ
                 nhu cầu của khách hàng.
               </p>
-              <div id='item-1'>
+              <div id="item-1">
                 <h4>Máy In UV 3D là gì?</h4>
                 <p>
                   Máy In UV 3D gọi chung là các máy in kỹ thuật số với các kích
@@ -90,10 +92,10 @@ function DetailPost() {
                   trước đó và sản phẩm được làm khô ngay lập tức dưới đèn uv.
                 </p>
               </div>
-              <div id='item-2'>
+              <div id="item-2">
                 <h4>Các thông tin về máy in UV 3D</h4>
               </div>
-              <div id='item-2-1'>
+              <div id="item-2-1">
                 <h5>Các loại máy in uv chính hiện nay</h5>
                 <p>
                   Nếu phân về đặc tính của các dòng máy in thì sẽ gồm: máy in uv
@@ -106,7 +108,7 @@ function DetailPost() {
                   2m đến 3m)
                 </p>
               </div>
-              <div id='item-2-2'>
+              <div id="item-2-2">
                 <h5>Các thông số thao khảo cho dòng máy in UV 3D</h5>
                 <ul>
                   <li>Mã đầu phun Ricoh gen 5</li>
@@ -123,12 +125,14 @@ function DetailPost() {
                   <li>Định dạng hình ảnh TIF, JPEG, PSD, CDR, v.v</li>
                   <li>Kích thước 4330 x 2290 x 1675mm</li>
                 </ul>
-                <img src={imgSanpham} alt='photo' />
+                <div className="imgProductDetail">
+                  <img src={imgSanpham} alt="photo" />
+                </div>
                 <figcaption>
                   <i>Máy In UV 3D dạng cuộn khổ lớn bàn giao cho khách hàng</i>
                 </figcaption>
               </div>
-              <div id='item-3'>
+              <div id="item-3">
                 <h4>Một số ứng dụng của máy in UV 3D</h4>
                 <p>
                   Đối với các máy in uv hiện nay được ứng dụng rất nhiều trong
@@ -143,7 +147,9 @@ function DetailPost() {
                   <li>In tranh 3D – 5D treo tường hoặc dán tường</li>
                   <li>In ấn trên các vật liệu Alu, Mica, gạch men, inox,…</li>
                 </ul>
-                <img src={imgSanpham2} alt='photo' />
+                <div className="imgProductDetail">
+                  <img src={imgSanpham2} alt="photo" />
+                </div>
                 <figcaption>
                   <i>Ứng dụng máy in UV 3D</i>
                 </figcaption>
@@ -153,45 +159,45 @@ function DetailPost() {
             <CompanyCommit />
           </div>
 
-          <div className='col-2 category-doc'>
+          <div className="col-2 category-doc">
             <div>
-              <div>
-                <div className='article-category'>
+              <div className="list-displayflex">
+                <div className="article-category">
                   <h6>Danh Mục Bài Viết</h6>
-                  <div className='list-group'>
-                    <Link className='list-group-item list-group-item-action'>
+                  <div className="list-group">
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Theo Công Dụng
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Theo Chất Liệu
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Một Số Dòng Khác
                     </Link>
                   </div>
                 </div>
-                <div className='article-category'>
+                <div className="article-category">
                   <h6>Bài Viết Khác</h6>
-                  <div className='list-group'>
-                    <Link className='list-group-item list-group-item-action'>
+                  <div className="list-group">
+                    <Link className="list-group-item list-group-item-action">
                       Máy In UV 3D
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Khổ Lớn
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Khổ A3 - A4
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Decal
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Lụa - In Vải
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Băng Rôn
                     </Link>
-                    <Link className='list-group-item list-group-item-action'>
+                    <Link className="list-group-item list-group-item-action">
                       Máy In Trang 3D - 5D - 8D
                     </Link>
                   </div>

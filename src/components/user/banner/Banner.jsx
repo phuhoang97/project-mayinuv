@@ -29,7 +29,7 @@ const items = [
     getItem("Máy In UV Hỗn Hợp", "Máy In UV Hỗn Hợp"),
   ]),
   getItem(
-    <Link to='/post-detail'>Máy In UV 3D</Link>,
+    <Link style={{textDecoration: "none"}} to='/post-detail'>Máy In UV 3D</Link>,
     "sub2",
     <AppstoreOutlined />,
     [

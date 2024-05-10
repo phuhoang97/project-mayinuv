@@ -98,3 +98,22 @@
   display: block;
   z-index: 999999;
 } */
+
+@media screen and (max-width: 1160px){
+  .banner-left {
+    width: 100%;
+    border-right: 0;
+  }
+
+  .banner {
+    flex-direction: column;
+  }
+
+  .banner-right {
+    width: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+}

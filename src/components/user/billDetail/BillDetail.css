@@ -28,7 +28,6 @@
 
 .form-input {
   background-color: white;
-  padding: 5px 60px;
   border-radius: 10px;
 }
 
@@ -51,7 +50,6 @@
 .form-input {
   display: flex;
   flex-direction: column;
-  width: 500px;
 }
 
 .label-billding {
@@ -99,4 +97,20 @@
   position: absolute;
   right: 18%;
   bottom: 15%;
+}
+
+@media screen and (max-width:991px){
+  .compo-billing .col-6 {
+    width: 100%;
+  }
+
+  .btn-billding {
+    position: static;
+  }
+}
+
+@media screen and (max-width:991px){
+  .compo-billing {
+    margin-top: 140px;
+  }
 }
