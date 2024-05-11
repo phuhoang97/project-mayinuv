@@ -24,9 +24,9 @@ function getItem(label, key, icon, children, type) {
 
 const items = [
   getItem("Máy In UV", "sub1", <BarsOutlined />, [
-    getItem("Máy In UV Cuộn", "Máy In UV Cuộn"),
-    getItem("Máy In UV Phẳng", "Máy In UV Phẳng"),
-    getItem("Máy In UV Hỗn Hợp", "Máy In UV Hỗn Hợp"),
+    getItem( <Link style={{textDecoration: "none"}} to='/post-detail/1'>Máy In UV Cuộn</Link>, "Máy In UV Cuộn"),
+    getItem(<Link style={{textDecoration: "none"}} to='/post-detail/2'>Máy In UV Phẳng</Link>, "Máy In UV Phẳng"),
+    getItem(<Link style={{textDecoration: "none"}} to='/post-detail'>Máy In UV Hỗn Hợp</Link>, "Máy In UV Hỗn Hợp"),
   ]),
   getItem(
     <Link style={{textDecoration: "none"}} to='/post-detail'>Máy In UV 3D</Link>,
@@ -64,7 +64,7 @@ function Banner() {
   return (
     <div className='banner'>
       <div className='banner-left'>
-        <Menu onClick={onClick} mode='vertical' items={items} />
+        <Menu className="menu-banner-left" onClick={onClick} mode='vertical' items={items} />
       </div>
 
       <div className='banner-right'>
