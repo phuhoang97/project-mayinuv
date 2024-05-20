@@ -1,0 +1,94 @@
+.t-container .second-sectionAccessory {
+    margin-top: 20px;
+} 
+
+.second-sectionAccessory .first-container-section a{
+    text-decoration: none;
+    color: #a8a8a8;
+}
+
+@keyframes runningColor {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: 0% 0;
+    }
+  }
+  
+  .running-color-text {
+    font-style: italic;
+    background: linear-gradient(90deg, black, white, black); /* Gradient màu */
+    background-size: 200% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: runningColor 2s linear infinite;
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+  background-color: #885d5d;
+  color: #ffffff;
+}
+
+  .header-text-t .accessory-product {
+    margin: 20px 0;
+  }
+
+  .header-text-t .accessory-product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .accessory-product .show a {
+    color: white;
+  }
+
+  .accessory-product .show a:hover {
+    background-color: #a77171;
+    color: black;
+  }
+
+  .accessory-product .selected {
+    color: rgb(0, 0, 0) !important;
+    border: 1px solid rgb(121, 50, 50);
+  }
+
+  .accessorys-t .otherImgProducts {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+  
+  .accessorys-t .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền tối */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .accessorys-t .otherImgProducts:hover .overlay {
+    opacity: 1;
+  }
+  
+  .accessorys-t .overlay svg {
+    color: white;
+    font-size: 24px;
+  }
+
+  .accessorys-t .overlay span {
+    margin: 0;
+  }
+
+  .list-important-t li {
+    margin-bottom: 10px;
+  }
