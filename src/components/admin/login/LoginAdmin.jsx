@@ -61,16 +61,7 @@ function LoginAdmin() {
         });
       }
     } catch (error) {
-      toast.error("Đăng nhập thất bại !", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+      console.log(error);
     }
   };
 

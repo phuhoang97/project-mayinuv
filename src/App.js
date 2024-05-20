@@ -13,6 +13,8 @@ import AdminPage from "./pages/admin/AdminPage.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import ManagerProduct from "./pages/admin/ManagerProduct.jsx";
 import Accessory from "./components/user/Accessory/Accessory.jsx";
+import MainLayout from "./pages/admin/layouts/index.js";
+import ManagerOrder from "./pages/admin/ManagerOrder.jsx";
 
 function App() {
   const checkAdmin = localStorage.getItem("admin");
@@ -35,21 +37,14 @@ function App() {
         <Route path='/post-detail-doc' element={<PostDetailPage />}></Route>
         <Route path='/billding-detail' element={<BilldingPage />}></Route>
         <Route path='/accessory' element={ <Accessory/>}></Route>
-        <Route path='/login' element={<LoginPage />} />
         <Route path='*' element={<NotFound />}></Route>
 
-        {/* <Route
+        <Route
           path='/admin/*'
           element={
             checkAdmin ? (
-              <> */}
-        <Route path='/admin' element={<AdminPage />}>
-          <Route index element={<Dashboard />} />
-          <Route path='manager-product' element={<ManagerProduct />} />
-        </Route>
-        {/* </>
+              <MainLayout />
             ) : (
-              // Nếu không có dữ liệu trong local storage, chuyển router sang trang đăng nhập
               <Result
                 status='403'
                 title={<div className='text-black'>403</div>}
@@ -70,7 +65,12 @@ function App() {
               />
             )
           }
-        /> */}
+        >
+          <Route index element={<Dashboard />}></Route>
+          <Route path='manager-product' element={<ManagerProduct />} />
+          <Route path='manager-order' element={<ManagerOrder />} />
+        </Route>
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
     </>
   );
