@@ -73,7 +73,7 @@ function Headers() {
                 <Link className='nav-link'>Máy in UV cũ</Link>
               </li>
               <li className='nav-item'>
-                <Link className='nav-link'>Phụ kiện</Link>
+                <Link to={"/accessory"}className='nav-link'>Phụ kiện</Link>
               </li>
               <li className='nav-item'>
                 <Link className='nav-link'>Dịch vụ sửa chữa</Link>

@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import AdminPage from "./pages/admin/AdminPage.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import ManagerProduct from "./pages/admin/ManagerProduct.jsx";
+import Accessory from "./components/user/Accessory/Accessory.jsx";
 import MainLayout from "./pages/admin/layouts/index.js";
 import ManagerOrder from "./pages/admin/ManagerOrder.jsx";
 
@@ -35,6 +36,7 @@ function App() {
         <Route path='/post-detail/:id' element={<Status />}></Route>
         <Route path='/post-detail-doc' element={<PostDetailPage />}></Route>
         <Route path='/billding-detail' element={<BilldingPage />}></Route>
+        <Route path='/accessory' element={ <Accessory/>}></Route>
         <Route path='*' element={<NotFound />}></Route>
 
         <Route
