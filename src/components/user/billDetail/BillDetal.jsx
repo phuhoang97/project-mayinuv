@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormInput from "./FormInput";
-import imgProduct from "../../../assets/images/may-in-uv-phang-bossron-1325.jpg";
 import { CloseOutlined } from "@ant-design/icons";
-import axios from "axios";
+import { Table } from "antd";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./BillDetail.css";
 
 function BillDetail() {
-  // const [provinces, setProvinces] = useState([]);
-  // const [districts, setDistricts] = useState([]);
-  // const [wards, setWards] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch cart products from localStorage
+    const storedProducts =
+      JSON.parse(localStorage.getItem("cartProduct")) || [];
+    setCartProducts(storedProducts);
+  }, []);
 
   const initialValues = {
     username: "",
     nameCompany: "",
     email: "",
     phoneNumber: "",
-    // province: "",
-    // district: "",
-    // ward: "",
     address: "",
   };
 
@@ -38,51 +42,64 @@ function BillDetail() {
       .matches(/^\d+$/, "Số điện thoại phải là số")
       .required("Số điện thoại không được để trống"),
     address: Yup.string().required("Địa chỉ không được để trống"),
-    // province: Yup.string().required("Tỉnh/Thành phố không được để trống"),
-    // district: Yup.string().required("Quận/Huyện/Thị xã không được để trống"),
-    // ward: Yup.string().required("Phường/Xã không được để trống"),
   });
 
-  // useEffect(() => {
-  //   // Lấy danh sách tỉnh/thành phố
-  //   axios
-  //     .get("https://vn-public-apis.fpo.vn/provinces/getAll?limit=-1")
-  //     .then((res) => setProvinces(res.data))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
-  // const handleProvinceChange = (provinceCode, props) => {
-  //   // Lấy danh sách quận/huyện/thị xã theo tỉnh/thành phố
-  //   axios
-  //     .get(
-  //       `https://vn-public-apis.fpo.vn/districts/getByProvince?provinceCode=${provinceCode}&limit=-1`
-  //     )
-  //     .then((res) => {
-  //       setDistricts(res.data);
-  //       props.setFieldValue("district", ""); // Reset giá trị quận/huyện/...
-  //       props.setFieldValue("ward", ""); // Reset giá trị phường/xã
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // const handleDistrictChange = (districtCode, props) => {
-  //   // Lấy danh sách phường/xã theo quận/huyện/thị xã
-  //   axios
-  //     .get(
-  //       `https://vn-public-apis.fpo.vn/wards/getByDistrict?districtCode=${districtCode}&limit=-1`
-  //     )
-  //     .then((res) => {
-  //       setWards(res.data);
-  //       props.setFieldValue("ward", ""); // Reset giá trị phường/xã
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  const handleSubmit = (values, { setSubmitting }) => {
-    // Xử lý logic khi submit form
-    console.log(values);
-    setSubmitting(false);
+  const handleRemoveProduct = (index) => {
+    const updatedCart = [...cartProducts];
+    updatedCart.splice(index, 1);
+    setCartProducts(updatedCart);
+    localStorage.setItem("cartProduct", JSON.stringify(updatedCart));
+    toast.success("Sản phẩm đã được xóa khỏi giỏ hàng!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
+
+  const columns = [
+    // {
+    //   title: "STT",
+    //   dataIndex: "index",
+    //   key: "index",
+    //   render: (text, record, index) => index + 1,
+    // },
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      align: "center",
+    },
+    {
+      title: "Image",
+      dataIndex: "image",
+      key: "image",
+      align: "center",
+      render: (text, record) => (
+        <img src={text} alt={record.name} width={100} height={100} />
+      ),
+    },
+    {
+      title: "Action",
+      dataIndex: "action",
+      key: "action",
+      align: "center",
+      render: (text, record, index) => (
+        <CloseOutlined onClick={() => handleRemoveProduct(index)} />
+      ),
+    },
+  ];
+
+  const data = cartProducts.map((product, index) => ({
+    key: index,
+    // index,
+    name: product.name,
+    image: product.image,
+  }));
 
   return (
     <div>
@@ -93,7 +110,10 @@ function BillDetail() {
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
-              onSubmit={handleSubmit}
+              onSubmit={(values, { setSubmitting }) => {
+                console.log(values);
+                setSubmitting(false);
+              }}
             >
               {(props) => (
                 <Form className='form-input'>
@@ -121,70 +141,6 @@ function BillDetail() {
                     placeholder='Số điện thoại ...'
                     label='Số điện thoại'
                   />
-                  {/* <>
-                    <div className='form-group'>
-                      <label htmlFor='province'>Tỉnh/Thành phố</label>
-                      <Field
-                        as='select'
-                        name='province'
-                        onChange={(e) => {
-                          props.setFieldValue("province", e.target.value);
-                          handleProvinceChange(e.target.value, props);
-                        }}
-                      >
-                        <option value=''>Chọn Tỉnh/Thành phố</option>
-                        {provinces.map((province) => (
-                          <option key={province.code} value={province.code}>
-                            {province.name}
-                          </option>
-                        ))}
-                      </Field>
-                      <ErrorMessage
-                        name='province'
-                        component='div'
-                        className='error-message'
-                      />
-                    </div>
-                    <div className='form-group'>
-                      <label htmlFor='district'>Quận/Huyện/Thị xã</label>
-                      <Field
-                        as='select'
-                        name='district'
-                        onChange={(e) => {
-                          props.setFieldValue("district", e.target.value);
-                          handleDistrictChange(e.target.value, props);
-                        }}
-                      >
-                        <option value=''>Chọn Quận/Huyện/Thị xã</option>
-                        {districts.map((district) => (
-                          <option key={district.code} value={district.code}>
-                            {district.name}
-                          </option>
-                        ))}
-                      </Field>
-                      <ErrorMessage
-                        name='district'
-                        component='div'
-                        className='error-message'
-                      />
-                    </div>
-                    <div className='form-group'>
-                      <label htmlFor='ward'>Phường/Xã</label>
-                      <Field as='select' name='ward'>
-                        <option value=''>Chọn Phường/Xã</option>
-                        {wards.map((ward) => (
-                          <option key={ward.code} value={ward.code}>
-                            {ward.name}
-                          </option>
-                        ))}
-                      </Field>
-                      <ErrorMessage
-                        name='ward'
-                        component='div'
-                        className='error-message'
-                      />
-                    </div>
-                  </> */}
                   <FormInput
                     name='address'
                     type='text'
@@ -204,18 +160,13 @@ function BillDetail() {
           </div>
           <div className='col-6'>
             <div className='billding-right'>
-              <div className='product-billding'>
-                <img src={imgProduct} alt='photo' />
-                <span>Máy In UV Phẳng Fortune YF-2032G</span>
-                <CloseOutlined />
-              </div>
-
-              <div className='product-billding'>
-                <img src={imgProduct} alt='photo' />
-                <span>Máy In UV Phẳng Fortune YF-2032G</span>
-                <CloseOutlined />
-              </div>
-
+              <Table
+                columns={columns}
+                dataSource={data}
+                pagination={false}
+                scroll={{ y: 240 }}
+                size='large'
+              />
               <div className='note-billding'>
                 <strong>Sau khi khách hàng đặt chúng tôi sẽ liên hệ lại</strong>
               </div>

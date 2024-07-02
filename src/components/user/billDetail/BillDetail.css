@@ -96,10 +96,10 @@
 .btn-billding {
   position: absolute;
   right: 18%;
-  bottom: 15%;
+  bottom: 0;
 }
 
-@media screen and (max-width:991px){
+@media screen and (max-width: 991px) {
   .compo-billing .col-6 {
     width: 100%;
   }
@@ -109,8 +109,39 @@
   }
 }
 
-@media screen and (max-width:991px){
+@media screen and (max-width: 991px) {
   .compo-billing {
     margin-top: 140px;
   }
 }
+
+.billding-right {
+  width: 100%;
+}
+
+.ant-table-cell {
+  text-align: center;
+}
+
+.ant-table-tbody > tr > td {
+  text-align: center; /* Căn giữa nội dung trong mỗi ô */
+}
+
+/* 
+
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bill-table th,
+.bill-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; 
+}
+
+.bill-table th {
+  background-color: #f2f2f2;
+  text-align: center;
+} */

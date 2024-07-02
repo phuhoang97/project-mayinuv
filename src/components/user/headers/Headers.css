@@ -101,6 +101,11 @@ header {
 .icon-shopping {
   font-size: 22px;
   margin-left: 30px;
+  position: relative;
+}
+
+.icon-shopping:hover {
+  color: rgb(219, 68, 68);
 }
 
 /* animation Nav */
@@ -150,18 +155,18 @@ header {
     flex-direction: column;
     transform: translateX(100%);
     transition: 0.5s ease-in;
-      list-style: none;
-      padding-left: 0;
-      display: flex;
-      font-weight: 500;
-      align-items: flex-start;
-      justify-content: space-evenly;
-      gap: 0;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    font-weight: 500;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 0;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .navbar  .container-fluid {
+  .navbar .container-fluid {
     justify-content: center !important;
   }
 }
@@ -182,4 +187,22 @@ header {
 
 .toggle .line3 {
   transform: rotate(45deg) translate(-4px, -9px);
+}
+
+.length-product {
+  position: absolute;
+  /* top: 0;
+  right: 0; */
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(219, 68, 68);
+  /* 
+  
+  border: 1px solid rgb(219, 68, 68);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
 }

@@ -152,7 +152,6 @@ div.infomation-mechine-children {
   }
 }
 
-
 @media screen and (max-width: 1044px) {
   div.infomation-mechine-children {
     width: 37%;
@@ -187,18 +186,16 @@ div.infomation-mechine-children {
 @media screen and (min-width: 761px) and (max-width: 992px) {
   .t-container {
     margin: 190px auto 40px auto;
-}
+  }
 }
 
 @media screen and (max-width: 980px) {
   div.infomation-mechine-children {
     width: 35%;
   }
- 
 }
 
 @media screen and (max-width: 950px) {
-
   div.infomation-mechine-children {
     width: 40%;
   }
@@ -237,12 +234,9 @@ div.infomation-mechine-children {
   }
 }
 
-
 .third-section .otherImgProducts {
   height: 321.02px;
 }
-
-
 
 @media screen and (max-width: 540px) {
   .infomation-mechine {
@@ -286,7 +280,7 @@ div.infomation-mechine-children {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
 
   .imgsProduct-container {
@@ -306,4 +300,8 @@ div.infomation-mechine-children {
   opacity: 1; /* Khi hover vào .group-icon, hiển thị icon */
   transform: translateY(0); /* Di chuyển icon từ dưới lên */
   font-weight: 700;
+}
+
+.toastify-container {
+  margin-top: 500px;
 }

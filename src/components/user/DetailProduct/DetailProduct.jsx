@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 
 import "./DetailProduct.css";
 import ScrollToTopButton from "../scrolltotopbutton/ScrollToTopButton";
+import { toast } from "react-toastify";
 
 const onChange = (key) => {
   console.log(key);
@@ -79,8 +80,38 @@ function DetailProduct() {
     window.location.href = `/products/${productId}`;
   };
 
-  // const arrTags = data.data.tags.split(", ");
+  const handleAddToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem("cartProduct")) || [];
 
+    const productIndex = cart.findIndex((item) => item.id === product.id);
+
+    if (productIndex === -1) {
+      cart.push(product);
+      localStorage.setItem("cartProduct", JSON.stringify(cart));
+      toast.success("Sản phẩm đã được thêm vào giỏ hàng!", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.warn("Sản phẩm đã được thêm vào giỏ hàng!", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+    window.dispatchEvent(new Event("storage"));
+  };
 
   return (
     <>
@@ -88,36 +119,36 @@ function DetailProduct() {
         <>
           <Headers />
 
-          <div className="t-container">
-            <section className="first-section">
-              <div className="container-information-mechine">
-                <div className="breadcrumbs">
-                  <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                      <li className="breadcrumb-item">
-                        <a href="#">Trang chủ</a>
+          <div className='t-container'>
+            <section className='first-section'>
+              <div className='container-information-mechine'>
+                <div className='breadcrumbs'>
+                  <nav aria-label='breadcrumb'>
+                    <ol className='breadcrumb'>
+                      <li className='breadcrumb-item'>
+                        <a href='#'>Trang chủ</a>
                       </li>
-                      <li className="breadcrumb-item">
-                        <a href="#">{data.data.category_description}</a>
+                      <li className='breadcrumb-item'>
+                        <a href='#'>{data.data.category_description}</a>
                       </li>
-                      <li className="breadcrumb-item">
-                        <a href="#">{data.data.category_name}</a>
+                      <li className='breadcrumb-item'>
+                        <a href='#'>{data.data.category_name}</a>
                       </li>
                       <li
-                        className="breadcrumb-item active"
-                        aria-current="page"
+                        className='breadcrumb-item active'
+                        aria-current='page'
                       >
                         {data.data.name}
                       </li>
                     </ol>
                   </nav>
                 </div>
-                <div className="infomation-mechine">
-                  <div className="imgsProduct-container c-pointer">
-                    <div className="imgs-mechine">
+                <div className='infomation-mechine'>
+                  <div className='imgsProduct-container c-pointer'>
+                    <div className='imgs-mechine'>
                       {images.map((imageSrc, index) => (
                         <div
-                          className="imgs-product"
+                          className='imgs-product'
                           key={index}
                           onClick={() => handleThumbnailClick(imageSrc)}
                         >
@@ -125,48 +156,55 @@ function DetailProduct() {
                         </div>
                       ))}
                     </div>
-                    <div className="img-mechine">
+                    <div className='img-mechine'>
                       <img src={mainImage} alt={data.data.name} />
                     </div>
                   </div>
-                  <div className="infomation-mechine-children">
-                    <div className="name-information-mechine">
+                  <div className='infomation-mechine-children'>
+                    <div className='name-information-mechine'>
                       <div>
                         <h1>{data.data.name}</h1>
                       </div>
-                      <div className="content-product">
+                      <div className='content-product'>
                         {data.data.content.map((content, index) => (
                           <p key={index}>{content}</p>
                         ))}
                       </div>
                     </div>
-                    <div className="buyAndlike mt-20">
-                      <div className="category-tags ">
+                    <div className='buyAndlike mt-20'>
+                      <div className='category-tags '>
                         {/* <div className='fortune'>
                       <span>Fortune</span>
                     </div> */}
-                        <div className="SKU">
+                        <div className='SKU'>
                           <span>
                             SKU: <span>{data.data.code}</span>
                           </span>
                         </div>
-                        <div className="category">
+                        <div className='category'>
                           <span>
                             Category: <span>{data.data.category_name}</span>
                           </span>
                         </div>
-                        <div className="tags">
+                        <div className='tags'>
                           <span>
                             Tags:
                             {data.data.tags}
                           </span>
                         </div>
                       </div>
-                      <div className=" mt-20 d-flex justify-content-between">
+                      <div className=' mt-20 d-flex justify-content-between'>
                         <button
                           style={{ backgroundColor: "#DB4444" }}
-                          type="button"
-                          class="btn-buy btn btn-danger"
+                          type='button'
+                          class='btn-buy btn btn-danger'
+                          onClick={() =>
+                            handleAddToCart({
+                              id: data.data.id,
+                              name: data.data.name,
+                              image: mainImage,
+                            })
+                          }
                         >
                           Thêm vào giỏ hàng
                         </button>
@@ -176,17 +214,17 @@ function DetailProduct() {
                 </div>
               </div>
             </section>
-            <section className="second-section">
-              <div className="detailsProduct">
+            <section className='second-section'>
+              <div className='detailsProduct'>
                 <Tabs
-                  defaultActiveKey="1"
+                  defaultActiveKey='1'
                   onChange={onChange}
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
                   }}
                 >
-                  <TabPane tab="Mô tả" key="1" style={{ width: "100%" }}>
+                  <TabPane tab='Mô tả' key='1' style={{ width: "100%" }}>
                     <div>
                       <p>
                         Máy in UV phẳng YF-2512K được lắp đặt đầu in Kyocera
@@ -203,51 +241,51 @@ function DetailProduct() {
                         dụng hơn.
                       </p>
                       <h3>1. Hệ thống đo chiều cao tự động</h3>
-                      <p className="mt-20">
+                      <p className='mt-20'>
                         Có thể trực tiếp kiểm tra độ dày vật liệu thông qua phần
                         mềm. Dễ dàng hoạt động.
                       </p>
-                      <div className="imgProductDetail">
-                        <img src={productimg1} alt="chieucao" />
+                      <div className='imgProductDetail'>
+                        <img src={productimg1} alt='chieucao' />
                         <p>Hệ thống đo chiều cao tự động của máy in YF-2512K</p>
                       </div>
                       <h3>
                         2. Hệ thống định vị quy mô kích thước và hệ thống hút &
                         thổi cắt
                       </h3>
-                      <p className="mt-20">
+                      <p className='mt-20'>
                         Để định vị chính xác các vật liệu.
                       </p>
                       <h3>3. Vùng in có lỗ nhỏ tích hợp độ phân giải cao</h3>
-                      <p className="mt-20">
+                      <p className='mt-20'>
                         Để đảm bảo độ phân giải và chịu các vật liệu nặng hơn
                       </p>
-                      <div className="imgProductDetail">
-                        <img src={productimg2} alt="chieucao" />
+                      <div className='imgProductDetail'>
+                        <img src={productimg2} alt='chieucao' />
                         <p>Vùng in tích hợp nhiều lỗ nhỏ</p>
                       </div>
                       <h3>4. Đèn LED làm khô UV</h3>
-                      <p className="mt-20">
+                      <p className='mt-20'>
                         Giúp tiết kiệm năng lượng và tuổi thọ cao.
                       </p>
                       <h3>5. Thiết bị chống va chạm trong đầu in</h3>
-                      <p className="mt-20">
+                      <p className='mt-20'>
                         Hệ thống sẽ tự động dừng lại khi chạm vào vật liệu cao
                         hơn cỗ xe để bảo vệ đầu in.
                       </p>
                     </div>
                   </TabPane>
-                  <TabPane tab="Thông tin bổ sung" key="2">
-                    <div className="speci-model">
+                  <TabPane tab='Thông tin bổ sung' key='2'>
+                    <div className='speci-model'>
                       <h2>
                         Specification:{" "}
-                        <span className="nameProductDetail">
+                        <span className='nameProductDetail'>
                           {data.data.name}
                         </span>
                       </h2>
-                      <h2 className="mt-20">
+                      <h2 className='mt-20'>
                         Model:{" "}
-                        <span className="nameProductDetail">
+                        <span className='nameProductDetail'>
                           {data.data.code}
                         </span>
                       </h2>
@@ -256,9 +294,9 @@ function DetailProduct() {
                 </Tabs>
               </div>
             </section>
-            <section className="third-section mt-20">
-              <div className="d-flex align-items-center">
-                <div className="brick-red"></div>
+            <section className='third-section mt-20'>
+              <div className='d-flex align-items-center'>
+                <div className='brick-red'></div>
                 <h3 style={{ color: "rgb(219, 68, 68)", fontSize: "28px" }}>
                   Related Items
                 </h3>
@@ -266,18 +304,22 @@ function DetailProduct() {
               <Row gutter={[16, 16]}>
                 {alldata.data.map((data, index) => (
                   <Col key={index} xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <Link style={{textDecoration:"none", color:"black"}} to={`/products/${data.id}`} onClick={() => handleClick(data.id)}>
-                      <div className="otherImgProducts c-pointer" >
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={`/products/${data.id}`}
+                      onClick={() => handleClick(data.id)}
+                    >
+                      <div className='otherImgProducts c-pointer'>
                         <img src={data.images[0]} alt={productimg1} />
                         <div
-                          className="group-icon"
+                          className='group-icon'
                           style={{ marginTop: "-285px" }}
                         >
-                          <Tooltip title="Thêm Giỏ Hàng" placement="right">
-                            <ShoppingCartOutlined className="icon icon-shopping" />
+                          <Tooltip title='Thêm Giỏ Hàng' placement='right'>
+                            <ShoppingCartOutlined className='icon icon-shopping' />
                           </Tooltip>
-                          <Tooltip title="Xem Chi Tiết" placement="right">
-                            <EyeOutlined className="icon icon-eye" />
+                          <Tooltip title='Xem Chi Tiết' placement='right'>
+                            <EyeOutlined className='icon icon-eye' />
                           </Tooltip>
                         </div>
                       </div>
@@ -296,9 +338,9 @@ function DetailProduct() {
           <Footer />
         </>
       ) : (
-        <div className="t-container">
-          <Spin size="large">
-            <div className="content" />
+        <div className='t-container'>
+          <Spin size='large'>
+            <div className='content' />
           </Spin>
         </div>
       )}

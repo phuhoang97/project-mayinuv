@@ -8,6 +8,7 @@ function Headers() {
   const [active, setActive] = useState("nav-menu");
   const [toggleIcon, setToggleIcon] = useState("nav-toggler");
   const [scrolled, setScrolled] = useState(false);
+  const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +23,29 @@ function Headers() {
     };
   }, []);
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cartProduct")) || [];
+    setCartProducts(storedCart);
+  }, []);
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const updatedCart = JSON.parse(localStorage.getItem("cartProduct")) || [];
+      setCartProducts(updatedCart);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   const navToggle = () => {
     active === "nav-menu"
       ? setActive("nav-menu nav-active")
       : setActive("nav-menu");
 
-    // Toggle icon
     toggleIcon === "nav-toggler"
       ? setToggleIcon("nav-toggler toggle")
       : setToggleIcon("nav-toggler");
@@ -73,7 +91,10 @@ function Headers() {
               className='input-search'
             />
             <SearchOutlined className='icon-search' />
-            <ShoppingCartOutlined className='icon-shopping' />
+            <Link to={"/billding-detail"} style={{ color: "black" }}>
+              <ShoppingCartOutlined className='icon-shopping' />
+              <span className='length-product'>{cartProducts.length}</span>
+            </Link>
           </div>
 
           <div className={toggleIcon} onClick={navToggle}>

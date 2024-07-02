@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     if (!window.location.pathname.includes("admin")) {
-      localStorage.clear();
+      // localStorage.clear();
     }
   }, [window.location.href, window.location.pathname]);
 
